@@ -63,7 +63,8 @@ interface DataProviderProps {
   children: ReactNode;
 }
 
-const BASE_URL = 'http://localhost:5000/api';
+const BASE_URL = 'https://gangapumps-full-stack-business-website.onrender.com/api';
+
 
 // ---------------------- Provider ----------------------
 
