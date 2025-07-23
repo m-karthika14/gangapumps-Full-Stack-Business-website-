@@ -137,6 +137,16 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+
+
+      {/* SEO Hidden Links for Googlebot */}
+<div style={{ display: 'none' }}>
+  <a href="/products">Products</a>
+  <a href="/contact">Contact</a>
+  <a href="/about">AboutUs</a>
+  <a href="/reviews">Reviews</a>
+</div>
+
     </nav>
   );
 };
