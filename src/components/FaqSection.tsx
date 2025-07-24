@@ -47,6 +47,10 @@ const FaqSection: React.FC = () => {
           name="description"
           content="Frequently Asked Questions about delivery, installation, warranty, and bulk orders at Ganga Electrical & Hardwares."
         />
+         <meta
+    name="keywords"
+    content="Ganga Pumps, Ganga Electrical and Hardwares, water pumps Bangalore, submersible pumps, electrical store Bangalore, best hardware store in Bengaluru, pressure pumps, plumbing materials, borewell motor sales"
+  />
         <link rel="preload" as="image" href="https://i.postimg.cc/RFZygBMs/pexels-heiko-ruth-53441229-7859953.avif" />
         <script type="application/ld+json">
           {`

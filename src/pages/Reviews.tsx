@@ -41,10 +41,10 @@ const Reviews = () => {
           name="description"
           content="See what our customers say about Ganga Electricals' products and services. Share your own experience with a quick review!"
         />
-        <meta
-          name="keywords"
-          content="customer reviews, product feedback, Ganga Electricals testimonials, user experiences, best pump installation in bangalore"
-        />
+         <meta
+    name="keywords"
+    content="Ganga Pumps, Ganga Electrical and Hardwares, water pumps Bangalore, submersible pumps, electrical store Bangalore, best hardware store in Bengaluru, pressure pumps, plumbing materials, borewell motor sales"
+  />
         <link rel="canonical" href="https://gangapumps.com/reviews" />
         <meta property="og:title" content="Customer Reviews | Ganga Electrical and Hardwares" />
         <meta property="og:description" content="See what our customers say about Ganga Electricals. Share your review too!" />

@@ -80,10 +80,10 @@ const Products: React.FC = () => {
           name="description"
           content="Browse our wide range of high-quality electrical products, pumps, and hardware solutions. Filter by category or brand to find the perfect product."
         />
-        <meta
-          name="keywords"
-          content="Electrical Products, Bangalore Hardware, Water Pumps, Submersible Pumps, Ganga Electricals"
-        />
+         <meta
+    name="keywords"
+    content="Ganga Pumps, Ganga Electrical and Hardwares, water pumps Bangalore, submersible pumps, electrical store Bangalore, best hardware store in Bengaluru, pressure pumps, plumbing materials, borewell motor sales"
+  />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Ganga Electrical and Hardwares" />
         <link rel="canonical" href="https://gangapumps.com/products" />

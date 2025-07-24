@@ -15,11 +15,15 @@ const Footer = () => {
   return (
     <>
       <Helmet>
-        <title>Footer - Ganga Electrical & Hardwares</title>
+        <title>Ganga Electrical & Hardwares</title>
         <meta
           name="description"
           content="Get in touch with Ganga Electrical & Hardwares for quality electrical and plumbing products. Find address, phone, and email details here."
         />
+         <meta
+    name="keywords"
+    content="Ganga Pumps, Ganga Electrical and Hardwares, water pumps Bangalore, submersible pumps, electrical store Bangalore, best hardware store in Bengaluru, pressure pumps, plumbing materials, borewell motor sales"
+  />
         <link
           rel="preload"
           as="image"

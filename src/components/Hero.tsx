@@ -36,10 +36,10 @@ const Hero = () => {
           name="description"
           content="Ganga Electrical & Hardwares - Your trusted source for water pumps, plumbing, electricals, and hardware solutions in India."
         />
-        <meta
-          name="keywords"
-          content="Ganga Electricals, water pumps, electrical hardware, plumbing, best hardware store India, submersible pumps, ganga pumps, ganga hardwares, pumps in bangalore"
-        />
+         <meta
+    name="keywords"
+    content="Ganga Pumps, Ganga Electrical and Hardwares, water pumps Bangalore, submersible pumps, electrical store Bangalore, best hardware store in Bengaluru, pressure pumps, plumbing materials, borewell motor sales"
+  />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://gangapumps.com/" />
         <meta property="og:title" content="Ganga Electrical & Hardwares" />

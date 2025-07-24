@@ -35,6 +35,10 @@ const ProductDetail = () => {
       <Helmet>
         <title>{`${product.name} | Ganga Electrical and Hardwares`}</title>
         <meta name="description" content={product.description || 'High-quality pump and electrical products from trusted brands.'} />
+         <meta
+    name="keywords"
+    content="Ganga Pumps, Ganga Electrical and Hardwares, water pumps Bangalore, submersible pumps, electrical store Bangalore, best hardware store in Bengaluru, pressure pumps, plumbing materials, borewell motor sales"
+  />
         <meta property="og:title" content={`${product.name} | Ganga Pumps`} />
         <meta property="og:description" content={product.description || 'High-quality pump and electrical products from trusted brands.'} />
         <meta property="og:image" content={product.image} />
