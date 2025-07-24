@@ -3,33 +3,34 @@ import { Star } from 'lucide-react';
 import { useData } from '../context/DataContext';
 import { useInView } from 'react-intersection-observer';
 
-const cutoffDate = new Date('2025-07-24'); // Date after which review dates are shown
+const cutoffDate = new Date('2025-07-24');
 
 const ReviewCard = ({ review }: { review: any }) => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   const name = review.name || 'Anonymous';
   const comment = review.comment || 'No comment provided.';
-
   const reviewDate = review.date ? new Date(review.date) : null;
 
-  const showDate =
-    reviewDate && reviewDate.getTime() >= cutoffDate.setHours(0, 0, 0, 0);
-
-  const formattedDate = showDate
-    ? reviewDate.toLocaleDateString()
-    : null;
+  const showDate = reviewDate && reviewDate.getTime() >= cutoffDate.setHours(0, 0, 0, 0);
+  const formattedDate = showDate ? reviewDate.toLocaleDateString() : null;
 
   return (
     <div
       ref={ref}
-      className={`bg-dark p-6 rounded-lg transform transition-all duration-500 ${
+      className={`bg-dark p-6 rounded-lg transition-all duration-500 ${
         inView ? 'animate-fade-up' : 'opacity-0 translate-y-5'
       }`}
+      aria-label={`Review by ${name}`}
     >
-      <div className="flex mb-4">
+      <div className="flex mb-4 min-h-[24px]" aria-label={`Rating: ${review.rating} stars`}>
         {[...Array(review.rating)].map((_, i) => (
-          <Star key={i} size={18} className="text-accent fill-current" />
+          <Star
+            key={`${review._id}-star-${i}`}
+            size={18}
+            className="text-accent fill-current"
+            aria-hidden="true"
+          />
         ))}
       </div>
       <p className="font-inter text-white/90 mb-4 italic">"{comment}"</p>
@@ -45,10 +46,7 @@ const ReviewCard = ({ review }: { review: any }) => {
 
 const ReviewsSection = () => {
   const { reviews } = useData();
-
-  const fiveStarReviews = reviews
-    .filter((review) => review.rating === 5)
-    .slice(0, 4);
+  const fiveStarReviews = reviews.filter((r) => r.rating === 5).slice(0, 4);
 
   return (
     <>
@@ -69,10 +67,13 @@ const ReviewsSection = () => {
         }
       `}</style>
 
-      <section className="pt-8 pb-16 bg-white">
+      <section className="pt-8 pb-16 bg-white" id="customer-reviews" role="region" aria-labelledby="reviews-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="font-playfair text-3xl md:text-4xl font-bold text-dark mb-4">
+            <h2
+              id="reviews-heading"
+              className="font-playfair text-3xl md:text-4xl font-bold text-dark mb-4"
+            >
               Customer Reviews
             </h2>
             <p className="font-inter text-gray-600 text-lg max-w-2xl mx-auto">

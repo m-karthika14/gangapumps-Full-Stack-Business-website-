@@ -9,10 +9,10 @@ const OurClients = () => {
   });
 
   const images = [
-    'https://i.postimg.cc/3JgZ7V7W/one.webp',
-    'https://i.postimg.cc/wvyhrb0q/two.jpg',
-    'https://i.postimg.cc/cHpQGMbQ/three.jpg',
-    'https://i.postimg.cc/NGX67SKb/four.jpg',
+    'https://i.postimg.cc/vZJJwWNB/one.avif',
+    'https://i.postimg.cc/VsJ2vZP6/two.avif',
+    'https://i.postimg.cc/nzy2Ckqj/three.avif',
+    'https://i.postimg.cc/RFKfbznh/four.avif',
   ];
 
   const collageStyles = [
@@ -62,6 +62,8 @@ const OurClients = () => {
                     src={src}
                     alt={`Pump Service ${i + 1}`}
                     className="w-full h-56 object-cover rounded-sm"
+                    loading="lazy"
+                    fetchPriority={i === 0 ? 'high' : 'low'}
                   />
                   <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 w-5 h-5 bg-dark rounded-full shadow-inner border-2 border-gray-200"></div>
                 </div>
@@ -70,24 +72,25 @@ const OurClients = () => {
           </div>
         </div>
 
-      {/* Collage - Mobile */}
-<div className={`mt-12 md:hidden transition-all duration-1000 delay-300 px-4 ${inView ? 'opacity-100' : 'opacity-0'}`}>
-  <div className="grid grid-cols-2 gap-4">
-    {images.map((src, i) => (
-      <div key={i} className={`${mobileCollageStyles[i].rotation}`}>
-        <div className="relative bg-dark p-2 pb-4 rounded-md shadow-2xl">
-          <img
-            src={src}
-            alt="Ganga Electrical & Hardwares"
-            className="w-full aspect-square sm:aspect-[4/3] object-cover rounded-sm"
-          />
-          <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 w-5 h-5 bg-dark rounded-full shadow-inner border-2 border-gray-200"></div>
+        {/* Collage - Mobile */}
+        <div className={`mt-12 md:hidden transition-all duration-1000 delay-300 px-4 ${inView ? 'opacity-100' : 'opacity-0'}`}>
+          <div className="grid grid-cols-2 gap-4">
+            {images.map((src, i) => (
+              <div key={i} className={`${mobileCollageStyles[i].rotation}`}>
+                <div className="relative bg-dark p-2 pb-4 rounded-md shadow-2xl">
+                  <img
+                    src={src}
+                    alt="Ganga Electrical & Hardwares"
+                    className="w-full aspect-square sm:aspect-[4/3] object-cover rounded-sm"
+                    loading="lazy"
+                    fetchPriority={i === 0 ? 'high' : 'low'}
+                  />
+                  <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 w-5 h-5 bg-dark rounded-full shadow-inner border-2 border-gray-200"></div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    ))}
-  </div>
-</div>
-
 
         {/* Authorised Dealers Section */}
         <div className="mt-12 px-4 md:px-12">
@@ -107,45 +110,33 @@ const OurClients = () => {
 
             {/* Right - Logos */}
             <div className="w-full md:w-2/3 flex flex-wrap justify-center md:justify-start items-center gap-0.1 sm:gap-20">
-              {/* CRI */}
-              <a
-               
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-transform duration-300 transform hover:scale-110"
-              >
+              <a target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 transform hover:scale-110">
                 <img
                   src="https://i.postimg.cc/VLCK9731/c-r-i-pumps-logo-png-seeklogo-288586-removebg-preview.png"
                   alt="CRI Pumps"
                   className="h-48 sm:h-40 object-contain"
+                  loading="lazy"
+                  fetchPriority="low"
                 />
               </a>
 
-              {/* Grundfos */}
-              <a
-                
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-transform duration-300 transform hover:scale-110"
-              >
+              <a target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 transform hover:scale-110">
                 <img
                   src="https://i.postimg.cc/3xMY9cNZ/Grundfos-removebg-preview.png"
                   alt="Grundfos Pumps"
                   className="h-48 sm:h-40 object-contain"
+                  loading="lazy"
+                  fetchPriority="low"
                 />
               </a>
 
-              {/* Lubi */}
-              <a
-                
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-transform duration-300 transform hover:scale-110"
-              >
+              <a target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 transform hover:scale-110">
                 <img
                   src="https://i.postimg.cc/7P2x74YL/LUBI-LOGO-192-X-192-removebg-preview.png"
                   alt="Lubi Pumps"
                   className="h-48 sm:h-40 object-contain"
+                  loading="lazy"
+                  fetchPriority="low"
                 />
               </a>
             </div>

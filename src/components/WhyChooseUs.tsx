@@ -17,6 +17,8 @@ const WhyChooseUs = () => {
         <img
           src="https://i.postimg.cc/mrGtK0SD/pexels-pixabay-357440.jpg"
           alt="Background"
+          loading="lazy"
+          fetchPriority="high"
           className="absolute inset-0 w-full h-full object-cover opacity-60"
         />
         <div className="absolute inset-0 bg-black bg-opacity-40" />

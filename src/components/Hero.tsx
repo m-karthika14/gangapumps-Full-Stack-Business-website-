@@ -8,13 +8,13 @@ const Hero = () => {
 
   const slides = [
     {
-      image: 'https://i.postimg.cc/SKMPBdS9/pexels-heiko-ruth-53441229-7859953.jpg',
+      image: 'https://i.postimg.cc/RFZygBMs/pexels-heiko-ruth-53441229-7859953.avif',
     },
     {
-      image: 'https://i.postimg.cc/cJYyTdk5/De-Watermark-ai-1752730091299.jpg',
+      image: 'https://i.postimg.cc/wxm8Z9XZ/De-Watermark-ai-1753349506909.avif',
     },
     {
-      image: 'https://i.postimg.cc/BQqS6P7Z/De-Watermark-ai-1752729973722.jpg',
+      image: 'https://i.postimg.cc/7P7dXmDy/De-Watermark-ai-1753349729830.avif',
     },
   ];
 
@@ -23,11 +23,11 @@ const Hero = () => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, [slides.length]);
+  }, []);
 
   return (
     <section
-      className="relative min-h-[75vh] sm:min-h-[calc(100vh+2cm)] overflow-hidden pt-20 sm:pt-28"
+     className="relative min-h-[75vh] sm:min-h-[calc(100vh+2cm)] overflow-hidden pt-20 sm:pt-28"
       aria-label="Homepage banner section"
     >
       <Helmet>
@@ -38,67 +38,69 @@ const Hero = () => {
         />
         <meta
           name="keywords"
-          content="Ganga Electricals, water pumps, electrical hardware, plumbing, best hardware store India, submersible pumps, ganga pumps, ganga hardwares, pumps in banglaore, estimate for pumps, ganga electrical and hardwares, best pump installation in bangalore"
+          content="Ganga Electricals, water pumps, electrical hardware, plumbing, best hardware store India, submersible pumps, ganga pumps, ganga hardwares, pumps in bangalore"
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://gangapumps.com/" />
         <meta property="og:title" content="Ganga Electrical & Hardwares" />
-        <meta
-          property="og:description"
-          content="Trusted pump sales in Bangalore"
-        />
-        <meta
-          property="og:image"
-          content="https://i.postimg.cc/cHpQGMbQ/three.jpg"
-        />
+        <meta property="og:description" content="Trusted pump sales in Bangalore" />
+        <meta property="og:image" content="https://i.postimg.cc/cHpQGMbQ/three.jpg" />
         <meta property="og:url" content="https://gangapumps.com/" />
         <meta name="twitter:card" content="summary_large_image" />
+        <link rel="preload" as="image" href={slides[0].image} />
         <script type="application/ld+json">
           {`
-            {
-              "@context": "https://schema.org",
-              "@type": "HardwareStore",
-              "name": "Ganga Electrical & Hardwares",
-              "image": "https://i.postimg.cc/cHpQGMbQ/three.jpg",
-              "url": "https://gangapumps.com/",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Kottigepalya",
-                "addressLocality": "Bangalore",
-                "addressRegion": "Karnataka",
-                "postalCode": "560091",
-                "addressCountry": "IN"
-              },
-              "telephone": "+91-9986082495",
-              "openingHours": "Mo-Sa 09:00-18:00"
-            }
+          {
+            "@context": "https://schema.org",
+            "@type": "HardwareStore",
+            "name": "Ganga Electrical & Hardwares",
+            "image": "https://i.postimg.cc/cHpQGMbQ/three.jpg",
+            "url": "https://gangapumps.com/",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Kottigepalya",
+              "addressLocality": "Bangalore",
+              "addressRegion": "Karnataka",
+              "postalCode": "560091",
+              "addressCountry": "IN"
+            },
+            "telephone": "+91-9986082495",
+            "openingHours": "Mo-Sa 09:00-18:00"
+          }
           `}
         </script>
       </Helmet>
 
       <h1 className="sr-only">
-        Ganga Electrical & Hardwares - Your Trusted Pump Solutions In Banglore
+        Ganga Electrical & Hardwares - Your Trusted Pump Solutions in Bangalore
       </h1>
 
       {slides.map((slide, index) => (
         <div
           key={index}
           className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentSlide ? 'opacity-100' : 'opacity-0'
+            index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
           }`}
+          aria-hidden={index !== currentSlide}
         >
-          <img
-            src={slide.image}
-            alt="Ganga Electrical & Hardwares"
-            title="Ganga Electricals & Hardware - Trusted Pump Services in Banglore"
-            aria-label="Hero image showing electrical hardware"
-            className="w-full h-full object-cover"
-          />
 
-          {/* Background Gradient */}
-          <div className="absolute inset-0 z-10 bg-gradient-to-br from-black/70 via-black/40 to-transparent sm:from-black/60 sm:via-black/30 pointer-events-none" />
+        <picture>
+         <img
+  src={slide.image}
+  srcSet={`${slide.image} 1280w`}
+  sizes="100vw"
+  alt="Ganga Electricals hardware showcase"
+  title="Ganga Electricals & Hardware - Trusted Pump Services in Bangalore"
+  loading={index === 0 ? 'eager' : 'lazy'}
+  {...(index === 0 ? { fetchPriority: 'high' } : {})}
+  width={1920}
+  height={900}
+  className="w-full h-full object-cover"
+/>
+</picture>
 
-          {/* Text Content */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/40 to-transparent sm:from-black/60 sm:via-black/30 pointer-events-none" />
+
           <div className="absolute bottom-12 left-4 right-4 z-20 sm:bottom-40 sm:left-8 sm:right-4 sm:max-w-xl">
             <h2 className="font-playfair text-[#FFDC60] text-2xl font-bold leading-tight tracking-wide drop-shadow-[0_2px_4px_rgba(255,220,96,0.4)] sm:text-3xl md:text-4xl lg:text-5xl sm:leading-tight">
               Built on Trust <br />
@@ -121,19 +123,12 @@ const Hero = () => {
         </div>
       ))}
 
-      {/* Mobile-only overrides */}
       <style>
         {`
           @media (max-width: 640px) {
             section[aria-label="Homepage banner section"] {
-              min-height: 50vh !important;
-              height: 65vh;
-            }
-            section[aria-label="Homepage banner section"] img {
-              object-fit: cover !important;
-              object-position: center;
-              height: 100%;
-              width: 100%;
+              min-height: 60vh !important;
+              height: 70vh;
             }
           }
         `}

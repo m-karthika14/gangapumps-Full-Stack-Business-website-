@@ -32,6 +32,15 @@ const Home = () => {
         <meta property="og:image" content="https://gangapumps.com/og-image.jpg" />
         <link rel="canonical" href="https://gangapumps.com/" />
 
+        {/* Add LCP Optimization */}
+        <link
+          rel="preload"
+          as="image"
+          href="https://i.postimg.cc/RFZygBMs/pexels-heiko-ruth-53441229-7859953.avif"
+          fetchPriority="high"
+          type="image/avif"
+        />
+
         {/* JSON-LD Schema for Local Business */}
         <script type="application/ld+json">
           {`
@@ -97,32 +106,26 @@ const Home = () => {
             inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          {/* Statistics Section */}
           <div className="mb-10">
             <Statistics />
           </div>
 
-          {/* Product Slider Section */}
           <div>
             <ProductSlider />
           </div>
         </div>
       </div>
 
-      {/* Our Clients Section - Full Width */}
       <div className="w-full bg-white">
         <OurClients />
       </div>
 
-      {/* Why Choose Us Section */}
       <WhyChooseUs />
 
-      {/* FAQ Section - Full Width */}
       <div className="w-full">
         <FaqSection />
       </div>
 
-      {/* Reviews Section - Full Width */}
       <div className="w-full bg-white">
         <ReviewsSection />
       </div>

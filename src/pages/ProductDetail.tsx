@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Star, Phone, Mail } from 'lucide-react';
+import { Star, Phone, Mail } from 'lucide-react';
 import { useData } from '../context/DataContext';
 import { Helmet } from 'react-helmet-async';
 
@@ -33,17 +33,23 @@ const ProductDetail = () => {
     <div className="min-h-screen bg-dark pt-24 text-white">
       {/* SEO Head Tags */}
       <Helmet>
-        <title>{`${product.name} | Ganga Electrical and hardwares`}</title>
+        <title>{`${product.name} | Ganga Electrical and Hardwares`}</title>
         <meta name="description" content={product.description || 'High-quality pump and electrical products from trusted brands.'} />
         <meta property="og:title" content={`${product.name} | Ganga Pumps`} />
         <meta property="og:description" content={product.description || 'High-quality pump and electrical products from trusted brands.'} />
         <meta property="og:image" content={product.image} />
         <meta property="og:type" content="product" />
         <link rel="canonical" href={`https://gangapumps.com/product/${id}`} />
+        <link
+          rel="preload"
+          as="image"
+          href={product.image}
+          fetchPriority="high"
+          type="image/jpeg"
+        />
       </Helmet>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-
         {/* Product Card */}
         <div className="mt-6 bg-white text-dark rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
           <div className="md:flex">
@@ -51,6 +57,8 @@ const ProductDetail = () => {
               <img
                 src={product.image}
                 alt={product.name}
+                loading="eager"
+                fetchPriority="high"
                 className="w-full h-72 sm:h-96 md:h-full object-cover"
               />
             </div>

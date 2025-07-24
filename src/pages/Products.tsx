@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Search, ChevronDown } from 'lucide-react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useData } from '../context/DataContext';
 import { Listbox } from '@headlessui/react';
 import { Helmet } from 'react-helmet-async';
@@ -15,7 +15,10 @@ interface DropdownProps {
 const Dropdown: React.FC<DropdownProps> = ({ label, value, onChange, options }) => (
   <Listbox value={value} onChange={onChange}>
     <div className="relative">
-      <Listbox.Button className="w-full px-4 py-2 pr-10 rounded-xl bg-white/10 backdrop-blur-md text-white border border-white/20 shadow-md font-inter text-left transition-all duration-300 ease-in-out focus:outline-none focus:shadow-lg">
+      <Listbox.Button
+        className="w-full px-4 py-2 pr-10 rounded-xl bg-white/10 backdrop-blur-md text-white border border-white/20 shadow-md font-inter text-left transition-all duration-300 ease-in-out focus:outline-none focus:shadow-lg"
+        aria-label={`Filter by ${label}`}
+      >
         {value || `All ${label}`}
         <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-300" size={18} />
       </Listbox.Button>
@@ -50,7 +53,6 @@ const Products: React.FC = () => {
   const [categoryFilter, setCategoryFilter] = useState('');
   const [brandFilter, setBrandFilter] = useState('');
   const { products } = useData();
-  const navigate = useNavigate();
 
   const filteredProducts = products.filter(product =>
     product.name?.toLowerCase().includes(searchTerm.toLowerCase()) &&
@@ -70,8 +72,9 @@ const Products: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-dark pt-32 pb-16">
-      {/* ✅ SEO Tags */}
+      {/* ✅ SEO Meta Tags */}
       <Helmet>
+        <html lang="en" />
         <title>Our Products | Ganga Electricals Bangalore</title>
         <meta
           name="description"
@@ -79,10 +82,10 @@ const Products: React.FC = () => {
         />
         <meta
           name="keywords"
-          content="Electrical Products, Bangalore Hardware, Water Pumps, Submersible, Ganga Electricals"
+          content="Electrical Products, Bangalore Hardware, Water Pumps, Submersible Pumps, Ganga Electricals"
         />
         <meta name="robots" content="index, follow" />
-        <meta name="author" content="Ganga Electricals" />
+        <meta name="author" content="Ganga Electrical and Hardwares" />
         <link rel="canonical" href="https://gangapumps.com/products" />
       </Helmet>
 
@@ -95,7 +98,7 @@ const Products: React.FC = () => {
           </p>
         </div>
 
-        {/* Search Bar */}
+        {/* Search */}
         <div className="flex justify-center mt-4 mb-12 px-4">
           <div className="w-full max-w-2xl flex rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(255,255,255,0.05)] border border-white/20 bg-white/10 backdrop-blur-xl">
             <div className="relative flex-grow">
@@ -106,6 +109,7 @@ const Products: React.FC = () => {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full pl-12 pr-4 py-4 text-white placeholder:text-gray-300 bg-transparent focus:outline-none font-inter text-lg"
+                aria-label="Search products"
               />
             </div>
           </div>
@@ -119,7 +123,7 @@ const Products: React.FC = () => {
           </div>
         </div>
 
-        {/* Grouped Products by Category */}
+        {/* Grouped Product Display */}
         {groupedProducts.map(({ category, items }) => (
           <div key={category} className="mb-12">
             <h2 className="text-xl sm:text-2xl font-playfair font-bold text-white mb-6 border-l-4 border-accent pl-3">
@@ -127,11 +131,12 @@ const Products: React.FC = () => {
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {items.map(product => (
-                <Link to={`/product/${product._id}`} key={product._id} className="block">
+                <Link to={`/product/${product._id}`} key={product._id} className="block" aria-label={product.name}>
                   <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all cursor-pointer overflow-hidden">
                     <img
-                      src={product.image}
-                      alt={product.name}
+                      src={product.image || '/fallback-product.jpg'}
+                      alt={product.name || 'Product Image'}
+                      loading="lazy"
                       className="w-full h-60 object-contain bg-white p-4"
                     />
                     <div className="p-4">
@@ -145,7 +150,7 @@ const Products: React.FC = () => {
           </div>
         ))}
 
-        {/* No Results */}
+        {/* No Results Message */}
         {filteredProducts.length === 0 && (
           <div className="text-center py-12">
             <p className="font-inter text-gray-400 text-lg">

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { useInView } from 'react-intersection-observer';
@@ -40,6 +41,33 @@ const FaqSection: React.FC = () => {
 
   return (
     <>
+      <Helmet>
+        <title>FAQs - Ganga Electrical & Hardwares</title>
+        <meta
+          name="description"
+          content="Frequently Asked Questions about delivery, installation, warranty, and bulk orders at Ganga Electrical & Hardwares."
+        />
+        <link rel="preload" as="image" href="https://i.postimg.cc/RFZygBMs/pexels-heiko-ruth-53441229-7859953.avif" />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": ${JSON.stringify(
+                faqs.map(faq => ({
+                  "@type": "Question",
+                  "name": faq.question,
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": faq.answer,
+                  },
+                }))
+              )}
+            }
+          `}
+        </script>
+      </Helmet>
+
       <style>{`
         @keyframes fade-up {
           0% { opacity: 0; transform: translateY(20px); }
@@ -50,7 +78,10 @@ const FaqSection: React.FC = () => {
         }
       `}</style>
 
-      <section className="w-screen bg-white py-10 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden">
+      <section
+        className="w-screen bg-white py-10 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden"
+        aria-label="Frequently Asked Questions"
+      >
         <div
           className="w-full max-w-4xl mx-auto rounded-2xl px-4 sm:px-5 md:px-6 py-8 sm:py-10"
           style={{
@@ -62,7 +93,6 @@ const FaqSection: React.FC = () => {
             WebkitBackdropFilter: 'blur(8px)',
           }}
         >
-          {/* Heading */}
           <div className="flex flex-col items-center text-center mb-8 px-2">
             <h2 className="text-2xl sm:text-3xl font-playfair font-bold tracking-tight drop-shadow">
               Frequently Asked <br className="sm:hidden" /> Questions
@@ -72,7 +102,6 @@ const FaqSection: React.FC = () => {
             </p>
           </div>
 
-          {/* FAQ Cards */}
           <div className="mt-4 space-y-3 px-1">
             {faqs.map((faq, index) => {
               const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -96,6 +125,8 @@ const FaqSection: React.FC = () => {
                   <button
                     onClick={() => toggleFAQ(index)}
                     className="flex justify-between items-center w-full text-left p-4 font-inter text-sm sm:text-base font-medium bg-transparent transition-all duration-300"
+                    aria-expanded={openIndex === index}
+                    aria-controls={`faq-answer-${index}`}
                   >
                     {faq.question}
                     <span className="ml-3">
@@ -107,6 +138,7 @@ const FaqSection: React.FC = () => {
                     </span>
                   </button>
                   <div
+                    id={`faq-answer-${index}`}
                     className={`overflow-hidden px-4 text-sm sm:text-base font-inter transition-all duration-300 ease-in-out ${
                       openIndex === index ? 'max-h-40 py-2 opacity-100' : 'max-h-0 py-0 opacity-0'
                     }`}
@@ -118,7 +150,6 @@ const FaqSection: React.FC = () => {
             })}
           </div>
 
-          {/* WhatsApp CTA */}
           <div className="mt-10 text-center px-2">
             <p className="font-playfair text-sm sm:text-base mb-2">Chat with us on WhatsApp</p>
             <a

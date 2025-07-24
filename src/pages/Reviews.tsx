@@ -15,12 +15,7 @@ const Reviews = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     addReview(formData);
-    setFormData({
-      name: '',
-      rating: 5,
-      comment: '',
-      productId: ''
-    });
+    setFormData({ name: '', rating: 5, comment: '', productId: '' });
     alert('Thank you for your review!');
   };
 
@@ -28,10 +23,7 @@ const Reviews = () => {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const value = e.target.name === 'rating' ? parseInt(e.target.value) : e.target.value;
-    setFormData({
-      ...formData,
-      [e.target.name]: value
-    });
+    setFormData({ ...formData, [e.target.name]: value });
   };
 
   const getProductName = (productId: string) => {
@@ -43,16 +35,27 @@ const Reviews = () => {
     <div className="min-h-screen bg-dark pt-40 pb-16">
       {/* ✅ SEO Helmet */}
       <Helmet>
+        <html lang="en" />
         <title>Customer Reviews | Ganga Electrical and Hardwares</title>
-        <meta name="description" content="See what our customers say about Ganga Electricals' products and services. Share your own experience with a quick review!" />
-        <meta name="keywords" content="customer reviews, product feedback, Ganga Electricals testimonials, user experiences, best pump installation in bangalore" />
+        <meta
+          name="description"
+          content="See what our customers say about Ganga Electricals' products and services. Share your own experience with a quick review!"
+        />
+        <meta
+          name="keywords"
+          content="customer reviews, product feedback, Ganga Electricals testimonials, user experiences, best pump installation in bangalore"
+        />
+        <link rel="canonical" href="https://gangapumps.com/reviews" />
+        <meta property="og:title" content="Customer Reviews | Ganga Electrical and Hardwares" />
+        <meta property="og:description" content="See what our customers say about Ganga Electricals. Share your review too!" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://gangapumps.com/reviews" />
+        <meta property="og:image" content="https://gangapumps.com/og-image.jpg" />
       </Helmet>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h1 className="font-playfair text-4xl font-bold text-white mb-4">
-            Customer Reviews
-          </h1>
+          <h1 className="font-playfair text-4xl font-bold text-white mb-4">Customer Reviews</h1>
           <p className="font-inter text-white/90 text-lg max-w-2xl mx-auto">
             Read what our customers say and share your experience
           </p>
@@ -62,18 +65,18 @@ const Reviews = () => {
           {/* Review Form */}
           <div className="lg:col-span-1">
             <div className="bg-white/90 rounded-2xl shadow-2xl p-6 sticky top-24">
-              <h3 className="font-playfair text-xl font-bold text-dark mb-4">
-                Write a Review
-              </h3>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                {/* Name Field */}
+              <h3 className="font-playfair text-xl font-bold text-dark mb-4">Write a Review</h3>
+              <form onSubmit={handleSubmit} className="space-y-4" aria-label="Review form">
+                {/* Name */}
                 <div>
-                  <label className="font-inter block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="name" className="font-inter block text-sm font-medium text-gray-700 mb-1">
                     Name *
                   </label>
                   <input
-                    type="text"
+                    id="name"
                     name="name"
+                    type="text"
+                    autoComplete="name"
                     value={formData.name}
                     onChange={handleChange}
                     required
@@ -81,12 +84,13 @@ const Reviews = () => {
                   />
                 </div>
 
-                {/* Product Select */}
+                {/* Product */}
                 <div>
-                  <label className="font-inter block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="productId" className="font-inter block text-sm font-medium text-gray-700 mb-1">
                     Product (Optional)
                   </label>
                   <select
+                    id="productId"
                     name="productId"
                     value={formData.productId}
                     onChange={handleChange}
@@ -103,10 +107,11 @@ const Reviews = () => {
 
                 {/* Rating */}
                 <div>
-                  <label className="font-inter block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="rating" className="font-inter block text-sm font-medium text-gray-700 mb-1">
                     Rating *
                   </label>
                   <select
+                    id="rating"
                     name="rating"
                     value={formData.rating}
                     onChange={handleChange}
@@ -122,17 +127,18 @@ const Reviews = () => {
 
                 {/* Comment */}
                 <div>
-                  <label className="font-inter block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="comment" className="font-inter block text-sm font-medium text-gray-700 mb-1">
                     Review *
                   </label>
                   <textarea
+                    id="comment"
                     name="comment"
                     value={formData.comment}
                     onChange={handleChange}
-                    
                     rows={4}
-                    className="w-full px-3 py-2 border border-gray-300 bg-white/90 text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary font-inter"
                     placeholder="Share your experience..."
+                    required
+                    className="w-full px-3 py-2 border border-gray-300 bg-white/90 text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary font-inter"
                   />
                 </div>
 
@@ -147,7 +153,7 @@ const Reviews = () => {
             </div>
           </div>
 
-          {/* Reviews List */}
+          {/* Review List */}
           <div className="lg:col-span-2">
             <div className="space-y-6">
               {reviews.map((review) => {
@@ -160,7 +166,7 @@ const Reviews = () => {
                     <div className="flex items-start justify-between mb-4">
                       <div>
                         <div className="flex items-center mb-2">
-                          <div className="flex mr-3">
+                          <div className="flex mr-3" aria-label={`Rating: ${review.rating} stars`}>
                             {[...Array(review.rating)].map((_, i) => (
                               <Star key={i} size={18} className="text-accent fill-current" />
                             ))}
@@ -181,15 +187,15 @@ const Reviews = () => {
                   </div>
                 );
               })}
-            </div>
 
-            {reviews.length === 0 && (
-              <div className="text-center py-12">
-                <p className="font-inter text-gray-600 text-lg">
-                  No reviews yet. Be the first to share your experience!
-                </p>
-              </div>
-            )}
+              {reviews.length === 0 && (
+                <div className="text-center py-12">
+                  <p className="font-inter text-gray-600 text-lg">
+                    No reviews yet. Be the first to share your experience!
+                  </p>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
