@@ -10,14 +10,21 @@ const leadRoutes = require('./routes/leadRoutes');
 const app = express();
 
 // -------------------- CORS Setup --------------------
+const allowedOrigins = [
+  'http://localhost:5173',           // local dev
+  'https://gangapumps.com',         // live site without www
+  'https://www.gangapumps.com'      // live site with www
+];
+
 app.use(cors({
-  origin: [
-    'http://localhost:5173',         // for local dev
-    'https://gangapumps.com',        // your live domain
-  ],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  origin: allowedOrigins,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type'],
   credentials: true
 }));
+
+// Handle preflight requests
+app.options('*', cors());
 
 // -------------------- Middleware --------------------
 app.use(express.json());
