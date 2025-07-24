@@ -1,63 +1,34 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+
 require('dotenv').config();
 
 const productRoutes = require('./routes/productRoutes');
 const reviewRoutes = require('./routes/reviewRoutes');
-const leadRoutes = require('./routes/leadRoutes');
+const leadRoutes = require('./routes/leadRoutes'); // ✅ Step 1: Import lead routes
 
 const app = express();
 
-// -------------------- CORS Setup --------------------
-const allowedOrigins = [
-  'http://localhost:5173',           // local dev
-  'https://gangapumps.com',         // live site without www
-  'https://www.gangapumps.com'      // live site with www
-];
-
-app.use(cors({
-  origin: allowedOrigins,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type'],
-  credentials: true
-}));
-
-// Handle preflight requests
-app.options('*', cors());
-
-// -------------------- Middleware --------------------
+// Middleware
+app.use(cors());
 app.use(express.json());
 
-// -------------------- Test Route --------------------
-app.get('/', (req, res) => {
-  res.send('🚀 Backend is running!');
-});
-
-// -------------------- API Routes --------------------
+// Routes
 app.use('/api/products', productRoutes);
 app.use('/api/reviews', reviewRoutes);
-app.use('/api/leads', leadRoutes);
+app.use('/api/leads', leadRoutes); // ✅ Step 2: Use lead routes
 
-// -------------------- MongoDB & Server --------------------
+// MongoDB Connection
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
 .then(() => {
   console.log('✅ MongoDB connected');
-
-  const PORT = process.env.PORT || 5000;
-
-  // Bind to 0.0.0.0 for Render
-  const server = app.listen(PORT, '0.0.0.0', () => {
-    console.log(`🚀 Server running on port ${PORT}`);
-  });
-
-  // Prevent timeout-related 502 errors on Render
-  server.keepAliveTimeout = 120000;
-  server.headersTimeout = 120000;
-
+  app.listen(process.env.PORT || 5000, () =>
+    console.log(`🚀 Server running on port ${process.env.PORT || 5000}`)
+  );
 })
 .catch(err => {
   console.error('❌ MongoDB connection failed:', err);
