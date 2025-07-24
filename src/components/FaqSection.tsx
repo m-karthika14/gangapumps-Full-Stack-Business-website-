@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     question: 'Are your products under warranty?',
-    answer: 'Yes, all our products comes with manufacturer warranty.',
+    answer: 'Yes, all our products come with manufacturer warranty.',
   },
   {
     question: 'Do you support bulk orders?',
@@ -39,37 +39,40 @@ const FaqSection: React.FC = () => {
     setOpenIndex(prev => (prev === index ? null : index));
   };
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <>
       <Helmet>
-        <title>Ganga Electrical & Hardwares</title>
+        <title>FAQs – Ganga Electricals & Hardwares</title>
         <meta
           name="description"
-          content="Frequently Asked Questions about delivery, installation, warranty, and bulk orders at Ganga Electrical & Hardwares."
+          content="Frequently Asked Questions about delivery, installation, warranty, and bulk orders at Ganga Electricals & Hardwares, Bangalore."
         />
-         <meta
-    name="keywords"
-    content="Ganga Pumps, Ganga Electrical and Hardwares, water pumps Bangalore, submersible pumps, electrical store Bangalore, best hardware store in Bengaluru, pressure pumps, plumbing materials, borewell motor sales"
-  />
+        <meta
+          name="keywords"
+          content="Ganga Pumps, Ganga Electrical and Hardwares, water pumps Bangalore, submersible pumps, electrical store Bangalore, best hardware store in Bengaluru, pressure pumps, plumbing materials, borewell motor sales"
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://gangapumps.com/" />
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+          as="style"
+        />
         <link rel="preload" as="image" href="https://i.postimg.cc/RFZygBMs/pexels-heiko-ruth-53441229-7859953.avif" />
-        <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": ${JSON.stringify(
-                faqs.map(faq => ({
-                  "@type": "Question",
-                  "name": faq.question,
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": faq.answer,
-                  },
-                }))
-              )}
-            }
-          `}
-        </script>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
       <style>{`

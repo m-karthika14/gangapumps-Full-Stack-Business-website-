@@ -11,6 +11,7 @@ const About = () => {
           name="description"
           content="Learn more about Ganga Electrical & Hardwares – trusted electrical and plumbing service providers in Bangalore offering affordable water pump and hardware solutions."
         />
+        
          <meta
     name="keywords"
     content="Ganga Pumps, Ganga Electrical and Hardwares, water pumps Bangalore, submersible pumps, electrical store Bangalore, best hardware store in Bengaluru, pressure pumps, plumbing materials, borewell motor sales"
@@ -22,6 +23,12 @@ const About = () => {
           type="image/avif"
           fetchPriority="high"
         />
+
+     <link
+  rel="alternate"
+  href="https://gangapumps.com/about"
+  {...{ hreflang: 'en-IN' }}
+/>
       </Helmet>
 
       {/* Hero Banner */}

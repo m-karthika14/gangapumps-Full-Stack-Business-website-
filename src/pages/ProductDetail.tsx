@@ -51,6 +51,12 @@ const ProductDetail = () => {
           fetchPriority="high"
           type="image/jpeg"
         />
+
+          <link
+  rel="alternate"
+  href="https://gangapumps.com/"
+  {...{ hreflang: 'en-IN' }}
+/>
       </Helmet>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

@@ -20,8 +20,12 @@ const Home = () => {
         <title>Ganga Electrical & Hardwares | Home</title>
         <meta
           name="description"
-          content="Discover high-quality electricals and hardware from trusted brands. Ganga Electrical & Hardwares delivers excellence with every product."
+          content="Discover high-quality electricals and hardware from trusted brands.Ganga Pumps. Ganga Electrical & Hardwares delivers excellence with every product."
         />
+        <meta
+    name="keywords"
+    content="Ganga Pumps, Ganga Electrical and Hardwares, water pumps Bangalore, submersible pumps, electrical store Bangalore, best hardware store in Bengaluru, pressure pumps, plumbing materials, borewell motor sales"
+  />
         <meta property="og:title" content="Ganga Electrical & Hardwares | Home" />
         <meta
           property="og:description"
@@ -40,6 +44,12 @@ const Home = () => {
           fetchPriority="high"
           type="image/avif"
         />
+
+         <link
+  rel="alternate"
+  href="https://gangapumps.com/"
+  {...{ hreflang: 'en-IN' }}
+/>
 
         {/* JSON-LD Schema for Local Business */}
         <script type="application/ld+json">

@@ -51,6 +51,13 @@ const Reviews = () => {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://gangapumps.com/reviews" />
         <meta property="og:image" content="/new.avif" />
+
+
+          <link
+  rel="alternate"
+  href="https://gangapumps.com/reviews"
+  {...{ hreflang: 'en-IN' }}
+/>
       </Helmet>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -87,6 +87,13 @@ const Products: React.FC = () => {
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Ganga Electrical and Hardwares" />
         <link rel="canonical" href="https://gangapumps.com/products" />
+
+
+          <link
+  rel="alternate"
+  href="https://gangapumps.com/products"
+  {...{ hreflang: 'en-IN' }}
+/>
       </Helmet>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
