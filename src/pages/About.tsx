@@ -24,6 +24,8 @@ const About = () => {
           fetchPriority="high"
         />
 
+        <link rel="canonical" href="https://gangapumps.com/about" />
+
      <link
   rel="alternate"
   href="https://gangapumps.com/about"
