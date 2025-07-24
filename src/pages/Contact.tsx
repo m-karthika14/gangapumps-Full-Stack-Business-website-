@@ -44,7 +44,7 @@ const Contact = () => {
     "@context": "https://schema.org",
     "@type": "HardwareStore",
     "name": "Ganga Electrical & Hardwares",
-    "image": "https://www.gangapumps.com/logo.png", // Replace with your logo URL
+    "image": "/new.avif", // Replace with your logo URL
     "telephone": "+91 9986082495",
     "email": "sales@gangapumps.com",
     "address": {

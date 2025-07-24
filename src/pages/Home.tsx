@@ -29,7 +29,7 @@ const Home = () => {
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://gangapumps.com/" />
-        <meta property="og:image" content="https://gangapumps.com/og-image.jpg" />
+        <meta property="og:image" content="/new.avif" />
         <link rel="canonical" href="https://gangapumps.com/" />
 
         {/* Add LCP Optimization */}
@@ -48,7 +48,7 @@ const Home = () => {
             "@context": "https://schema.org",
             "@type": "HardwareStore",
             "name": "Ganga Electrical & Hardwares",
-            "image": "https://gangapumps.com/logo.jpg",
+            "image": "/new.avif",
             "url": "https://gangapumps.com/",
             "telephone": "+91-9986082495",
             "address": {

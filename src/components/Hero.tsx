@@ -44,7 +44,7 @@ const Hero = () => {
         <link rel="canonical" href="https://gangapumps.com/" />
         <meta property="og:title" content="Ganga Electrical & Hardwares" />
         <meta property="og:description" content="Trusted pump sales in Bangalore" />
-        <meta property="og:image" content="https://i.postimg.cc/cHpQGMbQ/three.jpg" />
+        <meta property="og:image" content="/new.avif" />
         <meta property="og:url" content="https://gangapumps.com/" />
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="preload" as="image" href={slides[0].image} />
@@ -54,7 +54,7 @@ const Hero = () => {
             "@context": "https://schema.org",
             "@type": "HardwareStore",
             "name": "Ganga Electrical & Hardwares",
-            "image": "https://i.postimg.cc/cHpQGMbQ/three.jpg",
+            "image": "/new.avif",
             "url": "https://gangapumps.com/",
             "address": {
               "@type": "PostalAddress",

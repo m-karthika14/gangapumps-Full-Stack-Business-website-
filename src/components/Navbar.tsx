@@ -51,7 +51,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="z-20">
             <img
-              src="https://i.postimg.cc/G2hn0WFh/Whats-App-Image-2025-07-16-at-14-32-07-9bff67f5-1-removebg-preview.png"
+              src="/new.avif"
               alt="Ganga Electrical and Hardwares Logo"
               className="h-16 sm:h-20 lg:h-28 object-contain drop-shadow-[0_0_5px_rgba(221,168,83,0.7)]"
               loading="eager"

@@ -32,7 +32,7 @@ const Footer = () => {
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               "name": "Ganga Electrical and Hardwares",
-              "image": "https://i.postimg.cc/ZK5cNsnD/shop-building-front.avif",
+              "image": "/new.avif",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "No. 57/6, Opposite Nirashrithara Parihara Kendra, Sajjepalya, Magadi Main Road, Manahalli Road",

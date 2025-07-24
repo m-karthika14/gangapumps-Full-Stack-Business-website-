@@ -50,7 +50,7 @@ const Reviews = () => {
         <meta property="og:description" content="See what our customers say about Ganga Electricals. Share your review too!" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://gangapumps.com/reviews" />
-        <meta property="og:image" content="https://gangapumps.com/og-image.jpg" />
+        <meta property="og:image" content="/new.avif" />
       </Helmet>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
