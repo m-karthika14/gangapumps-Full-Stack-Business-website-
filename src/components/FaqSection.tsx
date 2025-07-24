@@ -42,7 +42,7 @@ const FaqSection: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>FAQs - Ganga Electrical & Hardwares</title>
+        <title>Ganga Electrical & Hardwares</title>
         <meta
           name="description"
           content="Frequently Asked Questions about delivery, installation, warranty, and bulk orders at Ganga Electrical & Hardwares."
