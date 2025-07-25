@@ -65,12 +65,16 @@ const ProductDetail = () => {
           <div className="md:flex">
             <div className="md:w-1/2">
               <img
-                src={product.image}
-                alt={product.name}
-                loading="eager"
-                fetchPriority="high"
-                className="w-full h-72 sm:h-96 md:h-full object-cover"
-              />
+  src={product.image.replace('/upload/', '/upload/w_600,f_auto,q_auto/')}
+  srcSet={`
+    ${product.image.replace('/upload/', '/upload/w_600,f_auto,q_auto/')} 600w,
+    ${product.image.replace('/upload/', '/upload/w_1200,f_auto,q_auto/')} 1200w
+  `}
+  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+  alt={product.name}
+  className="w-full h-auto object-cover"
+/>
+
             </div>
 
             <div className="md:w-1/2 p-6 sm:p-8">

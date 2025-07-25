@@ -163,7 +163,7 @@ const FaqSection: React.FC = () => {
               href="https://wa.me/919986082495?text=Please%20fill%20in%20your%20details%3A%0AName%20-%20%0APhone%20Number%20-%20%0AProduct/Request%20-%20"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center bg-[#25D366] text-white font-inter px-4 py-2 rounded-full shadow-md hover:scale-105 transition-transform duration-300 text-sm"
+              className="inline-flex items-center bg-[#128C4B] text-white font-inter px-4 py-2 rounded-full shadow-md hover:scale-105 transition-transform duration-300 text-sm"
             >
               <FaWhatsapp className="mr-2" size={18} />
               Chat on WhatsApp

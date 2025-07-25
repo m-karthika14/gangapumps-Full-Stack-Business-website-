@@ -141,10 +141,10 @@ const Navbar = () => {
 
       {/* SEO Links for Googlebot */}
       <div style={{ display: 'none' }}>
-        <a href="/products">Products</a>
-        <a href="/contact">Contact</a>
-        <a href="/about">AboutUs</a>
-        <a href="/reviews">Reviews</a>
+        <a href="/products">View our Products</a>
+        <a href="/contact">Contact Ganga Electrical & Hardwares</a>
+        <a href="/about">About Ganga Electrical & Hardwares</a>
+        <a href="/reviews">Read Customer Reviews</a>
       </div>
     </nav>
   );

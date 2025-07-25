@@ -110,35 +110,27 @@ const OurClients = () => {
 
             {/* Right - Logos */}
             <div className="w-full md:w-2/3 flex flex-wrap justify-center md:justify-start items-center gap-0.1 sm:gap-20">
-              <a target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 transform hover:scale-110">
-                <img
-                  src="https://i.postimg.cc/VLCK9731/c-r-i-pumps-logo-png-seeklogo-288586-removebg-preview.png"
-                  alt="CRI Pumps"
-                  className="h-48 sm:h-40 object-contain"
-                  loading="lazy"
-                  fetchPriority="low"
-                />
-              </a>
-
-              <a target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 transform hover:scale-110">
-                <img
-                  src="https://i.postimg.cc/3xMY9cNZ/Grundfos-removebg-preview.png"
-                  alt="Grundfos Pumps"
-                  className="h-48 sm:h-40 object-contain"
-                  loading="lazy"
-                  fetchPriority="low"
-                />
-              </a>
-
-              <a target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 transform hover:scale-110">
-                <img
-                  src="https://i.postimg.cc/7P2x74YL/LUBI-LOGO-192-X-192-removebg-preview.png"
-                  alt="Lubi Pumps"
-                  className="h-48 sm:h-40 object-contain"
-                  loading="lazy"
-                  fetchPriority="low"
-                />
-              </a>
+              <img
+                src="https://i.postimg.cc/VLCK9731/c-r-i-pumps-logo-png-seeklogo-288586-removebg-preview.png"
+                alt="CRI Pumps"
+                className="h-48 sm:h-40 object-contain"
+                loading="lazy"
+                fetchPriority="low"
+              />
+              <img
+                src="https://i.postimg.cc/3xMY9cNZ/Grundfos-removebg-preview.png"
+                alt="Grundfos Pumps"
+                className="h-48 sm:h-40 object-contain"
+                loading="lazy"
+                fetchPriority="low"
+              />
+              <img
+                src="https://i.postimg.cc/7P2x74YL/LUBI-LOGO-192-X-192-removebg-preview.png"
+                alt="Lubi Pumps"
+                className="h-48 sm:h-40 object-contain"
+                loading="lazy"
+                fetchPriority="low"
+              />
             </div>
           </div>
         </div>

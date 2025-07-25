@@ -27,7 +27,7 @@ const Footer = () => {
         <link
           rel="preload"
           as="image"
-          href="https://i.postimg.cc/ZK5cNsnD/shop-building-front.avif"
+          href="/new.avif"
           fetchPriority="low"
         />
         <script type="application/ld+json">
@@ -55,7 +55,7 @@ const Footer = () => {
 
       {/* Hidden image to improve LCP if image not in DOM elsewhere */}
       <img
-        src="https://i.postimg.cc/ZK5cNsnD/shop-building-front.avif"
+        src="/new.avif"
         alt="Storefront"
         width="1"
         height="1"
