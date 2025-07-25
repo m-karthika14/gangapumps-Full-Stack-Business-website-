@@ -9,10 +9,10 @@ const OurClients = () => {
   });
 
   const images = [
-    'https://i.postimg.cc/vZJJwWNB/one.avif',
-    'https://i.postimg.cc/VsJ2vZP6/two.avif',
-    'https://i.postimg.cc/nzy2Ckqj/three.avif',
-    'https://i.postimg.cc/RFKfbznh/four.avif',
+    '/one.avif',
+    '/two.avif',
+    '/three.avif',
+    '/four.avif',
   ];
 
   const collageStyles = [

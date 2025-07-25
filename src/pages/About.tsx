@@ -30,7 +30,7 @@ const About = () => {
       {/* Hero Banner */}
       <div
         className="relative bg-cover bg-center h-[75vh]"
-        style={{ backgroundImage: "url('https://i.postimg.cc/0yHcTmc4/pexels-tomfisk-5115946.avif')" }}
+        style={{ backgroundImage: "url('/aboutus.avif')" }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative z-10 flex flex-col items-center justify-end pb-24 h-full text-white text-center px-4">

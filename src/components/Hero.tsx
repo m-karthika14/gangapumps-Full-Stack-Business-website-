@@ -8,13 +8,13 @@ const Hero = () => {
 
   const slides = [
     {
-      image: 'https://i.postimg.cc/RFZygBMs/pexels-heiko-ruth-53441229-7859953.avif',
+      image: '/onehero.avif',
     },
     {
-      image: 'https://i.postimg.cc/wxm8Z9XZ/De-Watermark-ai-1753349506909.avif',
+      image: '/twohero.avif',
     },
     {
-      image: 'https://i.postimg.cc/7P7dXmDy/De-Watermark-ai-1753349729830.avif',
+      image: '/threehero.avif',
     },
   ];
 
