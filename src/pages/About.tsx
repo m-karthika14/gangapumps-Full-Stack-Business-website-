@@ -16,13 +16,7 @@ const About = () => {
     name="keywords"
     content="Ganga Pumps, Ganga Electrical and Hardwares, water pumps Bangalore, submersible pumps, electrical store Bangalore, best hardware store in Bengaluru, pressure pumps, plumbing materials, borewell motor sales"
   />
-        <link
-          rel="preload"
-          as="image"
-          href="https://i.postimg.cc/j5H1CjWg/pexels-tomfisk-5115946.avif"
-          type="image/avif"
-          fetchPriority="high"
-        />
+        
 
         <link rel="canonical" href="https://gangapumps.com/about" />
 
