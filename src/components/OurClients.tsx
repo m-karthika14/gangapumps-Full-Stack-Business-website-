@@ -46,11 +46,11 @@ const OurClients = () => {
               Experience top-notch installation, repair, and maintenance services for all kinds of water pumps—trusted by hundreds of homes and industries in Bangalore.
             </p>
             <Link
-              to="/about"
-              className="bg-accent text-dark px-8 py-4 rounded-xl shadow-lg shadow-accent/40 hover:bg-opacity-90 transition-all duration-300 font-semibold text-lg hover:shadow-accent/60"
-            >
-              Learn More
-            </Link>
+  to="/about"
+  className="bg-accent text-dark px-8 py-4 rounded-xl shadow-lg shadow-accent/40 hover:bg-opacity-90 transition-all duration-300 font-semibold text-lg hover:shadow-accent/60"
+>
+  Learn more about Ganga Electricals & Hardwares
+</Link>
           </div>
 
           {/* Collage - Desktop */}
