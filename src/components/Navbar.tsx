@@ -143,7 +143,7 @@ const Navbar = () => {
       <div style={{ display: 'none' }}>
         <a href="/products">View our Products</a>
         <a href="/contact">Contact Ganga Electrical & Hardwares</a>
-        <a href="/about">About Ganga Electrical & Hardwares</a>
+       <a href="/about" aria-label="Learn more about Ganga Pumps">About Ganga Electrical & Hardwares</a>
         <a href="/reviews">Read Customer Reviews</a>
       </div>
     </nav>
