@@ -6,21 +6,20 @@ const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const navigate = useNavigate();
 
-const slides = [
-  {
-    image: 'https://res.cloudinary.com/dirqckouh/image/upload/f_auto,q_auto,w_1920,c_limit/v1753540559/onehero_trfw7r.avif',
-    mobileImage: 'https://res.cloudinary.com/dirqckouh/image/upload/f_auto,q_auto,w_640,c_limit/v1753540559/onehero_trfw7r.avif',
-  },
-  {
-    image: 'https://res.cloudinary.com/dirqckouh/image/upload/f_auto,q_auto,w_1920,c_limit/v1753541028/twohero_pzjx3f.avif',
-    mobileImage: 'https://res.cloudinary.com/dirqckouh/image/upload/f_auto,q_auto,w_640,c_limit/v1753541028/twohero_pzjx3f.avif',
-  },
-  {
-    image: 'https://res.cloudinary.com/dirqckouh/image/upload/f_auto,q_auto,w_1920,c_limit/v1753541049/threehero_stqqzw.avif',
-    mobileImage: 'https://res.cloudinary.com/dirqckouh/image/upload/f_auto,q_auto,w_640,c_limit/v1753541049/threehero_stqqzw.avif',
-  },
-];
-
+  const slides = [
+    {
+      image: '/onehero.avif',
+      mobileImage: '/oneherom.avif',
+    },
+    {
+      image: '/twohero.avif',
+      mobileImage: '/twoherom.avif',
+    },
+    {
+      image: '/threehero.avif',
+      mobileImage: '/threeherom.avif',
+    },
+  ];
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -36,43 +35,7 @@ const slides = [
     >
       <Helmet>
         <title>Ganga Electrical & Hardwares | Best pump sales in Bangalore</title>
-        <meta
-          name="description"
-          content="Ganga Electrical & Hardwares - Your trusted source for water pumps, plumbing, electricals, and hardware solutions in India."
-        />
-         <meta
-    name="keywords"
-    content="Ganga Pumps, Ganga Electrical and Hardwares, water pumps Bangalore, submersible pumps, electrical store Bangalore, best hardware store in Bengaluru, pressure pumps, plumbing materials, borewell motor sales"
-  />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://gangapumps.com/" />
-        <meta property="og:title" content="Ganga Electrical & Hardwares" />
-        <meta property="og:description" content="Trusted pump sales in Bangalore" />
-        <meta property="og:image" content="/new.avif" />
-        <meta property="og:url" content="https://gangapumps.com/" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <link rel="preload" as="image" href={slides[0].image} />
-        <script type="application/ld+json">
-          {`
-          {
-            "@context": "https://schema.org",
-            "@type": "HardwareStore",
-            "name": "Ganga Electrical & Hardwares",
-            "image": "/new.avif",
-            "url": "https://gangapumps.com/",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "Kottigepalya",
-              "addressLocality": "Bangalore",
-              "addressRegion": "Karnataka",
-              "postalCode": "560091",
-              "addressCountry": "IN"
-            },
-            "telephone": "+91-9986082495",
-            "openingHours": "Mo-Sa 09:00-18:00"
-          }
-          `}
-        </script>
+       
       </Helmet>
 
       <h1 className="sr-only">
@@ -90,26 +53,23 @@ const slides = [
             aria-hidden={!isActive}
           >
             <picture>
-  <source
-    srcSet={slide.mobileImage}
-    media="(max-width: 640px)"
-  />
-  <source
-    srcSet={slide.image}
-    media="(min-width: 641px)"
-  />
-  <img
-    src={slide.image}
-    alt="Ganga Electricals hardware showcase"
-    title="Ganga Electricals & Hardware - Trusted Pump Services in Bangalore"
-    loading={index === 0 ? 'eager' : 'lazy'}
-    {...(index === 0 ? { fetchPriority: 'high' } : {})}
-    width={1920}
-    height={900}
-    className="w-full h-full object-cover"
-  />
-</picture>
-
+              <source
+                srcSet={slide.mobileImage}
+                media="(max-width: 420px)"
+              />
+              <img
+                src={slide.image}
+                srcSet={`${slide.image} 1280w`}
+                sizes="100vw"
+                alt="Ganga Electricals hardware showcase"
+                title="Ganga Electricals & Hardware - Trusted Pump Services in Bangalore"
+                loading={index === 0 ? 'eager' : 'lazy'}
+                {...(index === 0 ? { fetchPriority: 'high' } : {})}
+                width={1920}
+                height={900}
+                className="w-full h-full object-cover"
+              />
+            </picture>
             <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/40 to-transparent sm:from-black/60 sm:via-black/30 pointer-events-none" />
             {isActive && (
               <div className="absolute bottom-12 left-4 right-4 z-20 sm:bottom-40 sm:left-8 sm:right-4 sm:max-w-xl">

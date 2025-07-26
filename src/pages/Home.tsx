@@ -20,7 +20,7 @@ const Home = () => {
         <title>Ganga Electrical & Hardwares | Home</title>
         <meta
           name="description"
-          content="Discover high-quality electricals and hardware from trusted brands.Ganga Pumps. Ganga Electrical & Hardwares delivers excellence with every product."
+          content="Discover high-quality electricals and hardware from trusted brands. Ganga Electrical & Hardwares delivers excellence with every product."
         />
         <meta
     name="keywords"

@@ -56,23 +56,12 @@ const FaqSection: React.FC = () => {
     <>
       <Helmet>
         <title>Ganga Electricals & Hardwares</title>
-        <meta
-          name="description"
-          content="Frequently Asked Questions about delivery, installation, warranty, and bulk orders at Ganga Electricals & Hardwares, Bangalore."
-        />
+       
         <meta
           name="keywords"
           content="Ganga Pumps, Ganga Electrical and Hardwares, water pumps Bangalore, submersible pumps, electrical store Bangalore, best hardware store in Bengaluru, pressure pumps, plumbing materials, borewell motor sales"
         />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://gangapumps.com/" />
-        <link
-          rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
-          as="style"
-        />
-        <link rel="preload" as="image" href="https://i.postimg.cc/RFZygBMs/pexels-heiko-ruth-53441229-7859953.avif" />
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+     
       </Helmet>
 
       <style>{`

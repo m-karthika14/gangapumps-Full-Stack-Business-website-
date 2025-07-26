@@ -16,41 +16,8 @@ const Footer = () => {
     <>
       <Helmet>
         <title>Ganga Electrical & Hardwares</title>
-        <meta
-          name="description"
-          content="Get in touch with Ganga Electrical & Hardwares for quality electrical and plumbing products. Find address, phone, and email details here."
-        />
-         <meta
-    name="keywords"
-    content="Ganga Pumps, Ganga Electrical and Hardwares, water pumps Bangalore, submersible pumps, electrical store Bangalore, best hardware store in Bengaluru, pressure pumps, plumbing materials, borewell motor sales"
-  />
-        <link
-          rel="preload"
-          as="image"
-          href="/new.avif"
-          fetchPriority="low"
-        />
-        <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              "name": "Ganga Electrical and Hardwares",
-              "image": "/new.avif",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "No. 57/6, Opposite Nirashrithara Parihara Kendra, Sajjepalya, Magadi Main Road, Manahalli Road",
-                "addressLocality": "Kottigepalya",
-                "addressRegion": "Bangalore",
-                "postalCode": "560091",
-                "addressCountry": "IN"
-              },
-              "telephone": "+919986082495",
-              "email": "sales@gangapumps.com",
-              "url": "https://gangapumps.com"
-            }
-          `}
-        </script>
+        
+       
       </Helmet>
 
       {/* Hidden image to improve LCP if image not in DOM elsewhere */}
