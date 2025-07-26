@@ -53,7 +53,8 @@ const Navbar = () => {
             <img
               src="/new.avif"
               alt="Ganga Electrical and Hardwares Logo"
-              className="h-16 sm:h-20 lg:h-28 object-contain drop-shadow-[0_0_5px_rgba(221,168,83,0.7)]"
+              className="h-16 sm:h-20 lg:h-28 object-contain drop-shadow-[0_0_5px_rgba(221,168,83,0.7)] ml-[-20px] sm:ml-0"
+
               loading="eager"
               fetchPriority="high"
               width={140}

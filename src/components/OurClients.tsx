@@ -141,7 +141,7 @@ const OurClients = () => {
               />
               {/* Mobile Logos */}
               <img
-                src="/crim1.png"
+                src="/crim.avif"
                 alt="CRI Pumps Mobile"
                 className="h-32 sm:h-28 object-contain md:hidden"
                 loading="lazy"
