@@ -28,10 +28,20 @@ const About = () => {
       </Helmet>
 
       {/* Hero Banner */}
-      <div
-        className="relative bg-cover bg-center h-[75vh]"
-        style={{ backgroundImage: "url('/aboutus.avif')" }}
-      >
+      <div className="relative bg-cover bg-center h-[75vh]">
+        <picture>
+          <source srcSet="/aboutusm.avif" media="(max-width: 640px)" />
+          <img
+            src="/aboutus.avif"
+            alt="About Ganga Electrical & Hardwares"
+            title="About Ganga Electrical & Hardwares - Trusted Plumbing & Electrical Services in Bangalore"
+            loading="lazy"
+            fetchPriority="high"
+            width={1920}
+            height={900}
+            className="w-full h-full object-cover"
+          />
+        </picture>
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative z-10 flex flex-col items-center justify-end pb-24 h-full text-white text-center px-4">
           <h1 className="text-5xl font-bold mb-4">About Us</h1>

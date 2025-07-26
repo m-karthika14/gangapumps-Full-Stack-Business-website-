@@ -14,13 +14,16 @@ const WhyChooseUs = () => {
     <section className="w-full bg-white">
       {/* Header */}
       <div className="relative w-full min-h-[30vh]">
-        <img
-          src="https://i.postimg.cc/mrGtK0SD/pexels-pixabay-357440.jpg"
-          alt="Background"
-          loading="lazy"
-          fetchPriority="high"
-          className="absolute inset-0 w-full h-full object-cover opacity-60"
-        />
+        <picture>
+          <source srcSet="/chhosem.avif" media="(max-width: 640px)" />
+          <img
+            src="/chhose.avif"
+            alt="Background"
+            loading="lazy"
+            fetchPriority="high"
+            className="absolute inset-0 w-full h-full object-cover opacity-60"
+          />
+        </picture>
         <div className="absolute inset-0 bg-black bg-opacity-40" />
         <div className="absolute inset-0 flex items-center justify-center px-4 z-10">
           <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold font-playfair uppercase text-center">

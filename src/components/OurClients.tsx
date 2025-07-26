@@ -15,6 +15,13 @@ const OurClients = () => {
     '/four.avif',
   ];
 
+  const mobileImages = [
+    '/onem.avif',
+    '/twom.avif',
+    '/threem.avif',
+    '/fourm.avif',
+  ];
+
   const collageStyles = [
     { container: 'absolute top-0 left-0 w-6/12 z-10', rotation: 'transform -rotate-6' },
     { container: 'absolute top-8 right-0 w-6/12 z-20', rotation: 'transform rotate-4' },
@@ -75,7 +82,7 @@ const OurClients = () => {
         {/* Collage - Mobile */}
         <div className={`mt-12 md:hidden transition-all duration-1000 delay-300 px-4 ${inView ? 'opacity-100' : 'opacity-0'}`}>
           <div className="grid grid-cols-2 gap-4">
-            {images.map((src, i) => (
+            {mobileImages.map((src, i) => (
               <div key={i} className={`${mobileCollageStyles[i].rotation}`}>
                 <div className="relative bg-dark p-2 pb-4 rounded-md shadow-2xl">
                   <img
@@ -110,24 +117,47 @@ const OurClients = () => {
 
             {/* Right - Logos */}
             <div className="w-full md:w-2/3 flex flex-wrap justify-center md:justify-start items-center gap-0.1 sm:gap-20">
+              {/* Desktop Logos */}
               <img
-                src="https://i.postimg.cc/VLCK9731/c-r-i-pumps-logo-png-seeklogo-288586-removebg-preview.png"
+                src="/cri.avif"
                 alt="CRI Pumps"
-                className="h-48 sm:h-40 object-contain"
+                className="h-48 sm:h-40 object-contain hidden md:block"
                 loading="lazy"
                 fetchPriority="low"
               />
               <img
-                src="https://i.postimg.cc/3xMY9cNZ/Grundfos-removebg-preview.png"
+                src="/grundfos.avif"
                 alt="Grundfos Pumps"
-                className="h-48 sm:h-40 object-contain"
+                className="h-48 sm:h-40 object-contain hidden md:block"
                 loading="lazy"
                 fetchPriority="low"
               />
               <img
-                src="https://i.postimg.cc/7P2x74YL/LUBI-LOGO-192-X-192-removebg-preview.png"
+                src="/lubi.avif"
                 alt="Lubi Pumps"
-                className="h-48 sm:h-40 object-contain"
+                className="h-48 sm:h-40 object-contain hidden md:block"
+                loading="lazy"
+                fetchPriority="low"
+              />
+              {/* Mobile Logos */}
+              <img
+                src="/crim.avif"
+                alt="CRI Pumps Mobile"
+                className="h-32 sm:h-28 object-contain md:hidden"
+                loading="lazy"
+                fetchPriority="low"
+              />
+              <img
+                src="/grundfosm.avif"
+                alt="Grundfos Pumps Mobile"
+                className="h-32 sm:h-28 object-contain md:hidden"
+                loading="lazy"
+                fetchPriority="low"
+              />
+              <img
+                src="/lubim.avif"
+                alt="Lubi Pumps Mobile"
+                className="h-32 sm:h-28 object-contain md:hidden"
                 loading="lazy"
                 fetchPriority="low"
               />

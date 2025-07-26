@@ -9,12 +9,15 @@ const Hero = () => {
   const slides = [
     {
       image: '/onehero.avif',
+      mobileImage: '/oneherom.avif',
     },
     {
       image: '/twohero.avif',
+      mobileImage: '/twoherom.avif',
     },
     {
       image: '/threehero.avif',
+      mobileImage: '/threeherom.avif',
     },
   ];
 
@@ -86,6 +89,10 @@ const Hero = () => {
             aria-hidden={!isActive}
           >
             <picture>
+              <source
+                srcSet={slide.mobileImage}
+                media="(max-width: 640px)"
+              />
               <img
                 src={slide.image}
                 srcSet={`${slide.image} 1280w`}
