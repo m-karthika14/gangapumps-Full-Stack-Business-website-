@@ -90,23 +90,26 @@ const slides = [
             aria-hidden={!isActive}
           >
             <picture>
-              <source
-                srcSet={slide.mobileImage}
-                media="(max-width: 640px)"
-              />
-              <img
-                src={slide.image}
-                srcSet={`${slide.image} 1280w`}
-                sizes="100vw"
-                alt="Ganga Electricals hardware showcase"
-                title="Ganga Electricals & Hardware - Trusted Pump Services in Bangalore"
-                loading={index === 0 ? 'eager' : 'lazy'}
-                {...(index === 0 ? { fetchPriority: 'high' } : {})}
-                width={1920}
-                height={900}
-                className="w-full h-full object-cover"
-              />
-            </picture>
+  <source
+    srcSet={slide.mobileImage}
+    media="(max-width: 640px)"
+  />
+  <source
+    srcSet={slide.image}
+    media="(min-width: 641px)"
+  />
+  <img
+    src={slide.image}
+    alt="Ganga Electricals hardware showcase"
+    title="Ganga Electricals & Hardware - Trusted Pump Services in Bangalore"
+    loading={index === 0 ? 'eager' : 'lazy'}
+    {...(index === 0 ? { fetchPriority: 'high' } : {})}
+    width={1920}
+    height={900}
+    className="w-full h-full object-cover"
+  />
+</picture>
+
             <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/40 to-transparent sm:from-black/60 sm:via-black/30 pointer-events-none" />
             {isActive && (
               <div className="absolute bottom-12 left-4 right-4 z-20 sm:bottom-40 sm:left-8 sm:right-4 sm:max-w-xl">
