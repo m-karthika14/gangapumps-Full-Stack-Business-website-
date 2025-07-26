@@ -19,7 +19,7 @@ const OurClients = () => {
     '/onem1.avif',
     '/twom1.avif',
     '/threem1.avif',
-    '/fourm1.avif',
+    '/fourm1.jpg',
   ];
 
   const collageStyles = [
@@ -56,7 +56,7 @@ const OurClients = () => {
   to="/about"
   className="bg-accent text-dark px-8 py-4 rounded-xl shadow-lg shadow-accent/40 hover:bg-opacity-90 transition-all duration-300 font-semibold text-lg hover:shadow-accent/60"
 >
-  Learn more about Ganga Electricals & Hardwares
+  About Ganga Pumps
 </Link>
           </div>
 
@@ -141,7 +141,7 @@ const OurClients = () => {
               />
               {/* Mobile Logos */}
               <img
-                src="/crim1.avif"
+                src="/crim1.png"
                 alt="CRI Pumps Mobile"
                 className="h-32 sm:h-28 object-contain md:hidden"
                 loading="lazy"
