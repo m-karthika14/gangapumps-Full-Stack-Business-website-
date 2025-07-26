@@ -16,10 +16,10 @@ const OurClients = () => {
   ];
 
   const mobileImages = [
-    '/onem.avif',
-    '/twom.avif',
-    '/threem.avif',
-    '/fourm.avif',
+    '/onem1.avif',
+    '/twom1.avif',
+    '/threem1.avif',
+    '/fourm1.avif',
   ];
 
   const collageStyles = [
@@ -141,21 +141,21 @@ const OurClients = () => {
               />
               {/* Mobile Logos */}
               <img
-                src="/crim.avif"
+                src="/crim1.avif"
                 alt="CRI Pumps Mobile"
                 className="h-32 sm:h-28 object-contain md:hidden"
                 loading="lazy"
                 fetchPriority="low"
               />
               <img
-                src="/grundfosm.avif"
+                src="/grundfosm1.avif"
                 alt="Grundfos Pumps Mobile"
                 className="h-32 sm:h-28 object-contain md:hidden"
                 loading="lazy"
                 fetchPriority="low"
               />
               <img
-                src="/lubim.avif"
+                src="/lubim1.avif"
                 alt="Lubi Pumps Mobile"
                 className="h-32 sm:h-28 object-contain md:hidden"
                 loading="lazy"
