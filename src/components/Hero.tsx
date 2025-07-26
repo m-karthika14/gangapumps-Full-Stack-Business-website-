@@ -6,20 +6,21 @@ const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const navigate = useNavigate();
 
-  const slides = [
-    {
-      image: '/onehero.avif',
-      mobileImage: '/oneherom.avif',
-    },
-    {
-      image: '/twohero.avif',
-      mobileImage: '/twoherom.avif',
-    },
-    {
-      image: '/threehero.avif',
-      mobileImage: '/threeherom.avif',
-    },
-  ];
+const slides = [
+  {
+    image: 'https://res.cloudinary.com/dirqckouh/image/upload/f_auto,q_auto,w_1920,c_limit/v1753540559/onehero_trfw7r.avif',
+    mobileImage: 'https://res.cloudinary.com/dirqckouh/image/upload/f_auto,q_auto,w_640,c_limit/v1753540559/onehero_trfw7r.avif',
+  },
+  {
+    image: 'https://res.cloudinary.com/dirqckouh/image/upload/f_auto,q_auto,w_1920,c_limit/v1753541028/twohero_pzjx3f.avif',
+    mobileImage: 'https://res.cloudinary.com/dirqckouh/image/upload/f_auto,q_auto,w_640,c_limit/v1753541028/twohero_pzjx3f.avif',
+  },
+  {
+    image: 'https://res.cloudinary.com/dirqckouh/image/upload/f_auto,q_auto,w_1920,c_limit/v1753541049/threehero_stqqzw.avif',
+    mobileImage: 'https://res.cloudinary.com/dirqckouh/image/upload/f_auto,q_auto,w_640,c_limit/v1753541049/threehero_stqqzw.avif',
+  },
+];
+
 
   useEffect(() => {
     const timer = setInterval(() => {
