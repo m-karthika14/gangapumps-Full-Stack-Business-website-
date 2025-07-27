@@ -75,14 +75,14 @@ const Products: React.FC = () => {
       {/* ✅ SEO Meta Tags */}
       <Helmet>
         <html lang="en" />
-        <title>Our Products | Ganga Electricals Bangalore</title>
+        <title>Our Products | Ganga Electrical and Hardwares Bangalore</title>
         <meta
-          name="description"
-          content="Browse our wide range of high-quality electrical products, pumps, and hardware solutions. Filter by category or brand to find the perfect product."
-        />
+  name="description"
+  content="Explore Grundfos, CRI Texmo water pumps, plumbing materials, and electrical products in Bangalore. Trusted quality from Ganga Electrical and Hardwares."
+/>
          <meta
     name="keywords"
-    content="Ganga Pumps, Ganga Electrical and Hardwares, water pumps Bangalore, submersible pumps, electrical store Bangalore, best hardware store in Bengaluru, pressure pumps, plumbing materials, borewell motor sales"
+    content="Ganga Pumps, Ganga Electrical and Hardwares,Grundfos pump dealers,grundfos pump deals in bangalore, water pumps Bangalore, submersible pumps, electrical store Bangalore, best hardware store in Bengaluru, pressure pumps, plumbing materials, borewell motor sales"
   />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Ganga Electrical and Hardwares" />

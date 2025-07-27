@@ -17,20 +17,20 @@ const Home = () => {
     <div className="min-h-screen overflow-x-hidden">
       {/* SEO Tags */}
       <Helmet>
-        <title>Ganga Electrical & Hardwares | Home</title>
+        <title>Ganga Electrical & Hardwares | Best Grundfos Pump Dealers in Bangalore</title>
         <meta
           name="description"
-          content="Discover high-quality electricals and hardware from trusted brands. Ganga Electrical & Hardwares delivers excellence with every product."
+          content="High-quality Grundfos, CRI, and Lubi water pumps, electricals, and plumbing materials in Bangalore. Ganga Electrical & Hardwares delivers trusted brands, expert service, and unmatched reliability."
         />
         <meta
     name="keywords"
-    content="Ganga Pumps, Ganga Electrical and Hardwares, water pumps Bangalore, submersible pumps, electrical store Bangalore, best hardware store in Bengaluru, pressure pumps, plumbing materials, borewell motor sales"
+    content="Ganga Pumps,Grundfos pumps, Grundfos pump dealers, Ganga Electrical and Hardwares, water pumps Bangalore, submersible pumps, electrical store Bangalore, best hardware store in Bengaluru, pressure pumps, plumbing materials, borewell motor sales"
   />
         <meta property="og:title" content="Ganga Electrical & Hardwares | Home" />
         <meta
-          property="og:description"
-          content="Discover high-quality electricals and hardware from trusted brands. Ganga Electrical & Hardwares delivers excellence with every product."
-        />
+         property="og:description"
+          content="Ganga Electrical & Hardwares delivers bestxcellence with e."
+        /> 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://gangapumps.com/" />
         <meta property="og:image" content="/new.avif" />

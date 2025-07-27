@@ -34,12 +34,12 @@ const Hero = () => {
       aria-label="Homepage banner section"
     >
       <Helmet>
-        <title>Ganga Electrical & Hardwares | Best pump sales in Bangalore</title>
+        <title>Ganga Electrical & Hardwares | Best pump Dealers in Bangalore</title>
        
       </Helmet>
 
       <h1 className="sr-only">
-        Ganga Electrical & Hardwares - Your Trusted Pump Solutions in Bangalore
+        Ganga Electrical & Hardwares - Your Trusted Grundfos Pump Dealers in Bangalore
       </h1>
 
       {slides.map((slide, index) => {
@@ -78,9 +78,7 @@ const Hero = () => {
                   Driven by Experience
                 </h2>
                 <p className="font-inter text-sm leading-relaxed mt-4 text-[#D9E3F0] drop-shadow-sm tracking-normal sm:text-base sm:mt-3 md:text-lg">
-                  We understand what every Indian home needs — because we've served
-                  over <strong>10,000+ satisfied customers</strong> with domestic
-                  pumping solutions that last.
+                  We are trusted Grundfos and CRI pump dealers in Bangalore, offering high-quality submersible pumps, pressure booster systems, and water motor pumps for both residential and commercial needs. 
                 </p>
                 <button
                   onClick={() => navigate('/contact')}

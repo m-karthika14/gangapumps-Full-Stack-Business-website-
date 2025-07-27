@@ -37,10 +37,10 @@ const ProductDetail = () => {
         <meta name="description" content={product.description || 'High-quality pump and electrical products from trusted brands.'} />
          <meta
     name="keywords"
-    content="Ganga Pumps, Ganga Electrical and Hardwares, water pumps Bangalore, submersible pumps, electrical store Bangalore, best hardware store in Bengaluru, pressure pumps, plumbing materials, borewell motor sales"
+    content="Ganga Pumps,Grundfos pumps, Grundfos pump dealers, Ganga Electrical and Hardwares, water pumps Bangalore, submersible pumps, electrical store Bangalore, best hardware store in Bengaluru, pressure pumps, plumbing materials, borewell motor sales"
   />
         <meta property="og:title" content={`${product.name} | Ganga Pumps`} />
-        <meta property="og:description" content={product.description || 'High-quality pump and electrical products from trusted brands.'} />
+        <meta property="og:description" content={product.description || 'Trusted grundfos dealers in bangalore.'} />
         <meta property="og:image" content={product.image} />
         <meta property="og:type" content="product" />
         <link rel="canonical" href={`https://gangapumps.com/product/${id}`} />
