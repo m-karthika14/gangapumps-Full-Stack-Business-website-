@@ -43,7 +43,7 @@ const About = () => {
           />
         </picture>
         <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="relative z-10 flex flex-col items-center justify-end pb-24 h-full text-white text-center px-4">
+        <div className="absolute inset-0 flex flex-col items-center justify-center h-full text-white text-center px-4 z-10" style={{ top: '60%', transform: 'translateY(-40%)', position: 'absolute' }}>
           <h1 className="text-5xl font-bold mb-4">About Us</h1>
           <p className="text-lg max-w-2xl">
             Ganga Electrical & Hardwares offers the best plumbing and electrical sales in Bangalore.
