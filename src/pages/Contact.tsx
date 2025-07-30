@@ -198,9 +198,9 @@ const Contact = () => {
                 <div>
                   <h4 className="font-semibold text-dark mb-1">Address</h4>
                   <p>
-                    No. 57/6, Opposite Nirashrithara Parihara Kendra,<br />
-                    Sajjepalya, Magadi Main Road,<br />
-                    Manahalli Road, Kottigepalya-560091<br />
+                    57/6, Opp N.P.K, Sajjepalya, Bangalore<br />
+                    Magadi Road-560091,<br />
+                    Bangalore<br />
                     India
                   </p>
                 </div>

@@ -24,7 +24,7 @@ const Home = () => {
         />
         <meta
     name="keywords"
-    content="Ganga Pumps,Grundfos pumps, Grundfos pump dealers, Ganga Electrical and Hardwares, water pumps Bangalore, submersible pumps, electrical store Bangalore, best hardware store in Bengaluru, pressure pumps, plumbing materials, borewell motor sales"
+    content="Ganga Pumps,Grundfos pumps, Grundfos pump dealers, Ganga Electrical and Hardwares, grundfos water pumps Bangalore, submersible pumps, grundfos store Bangalore, best hardware store in Bengaluru, pressure pumps, plumbing materials, affordable grundfos dealers in bangalore"
   />
         <meta property="og:title" content="Ganga Electrical & Hardwares | Home" />
         <meta

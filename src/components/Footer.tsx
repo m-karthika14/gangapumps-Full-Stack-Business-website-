@@ -99,7 +99,8 @@ const Footer = () => {
                 <div className="flex items-start break-words">
                   <MapPin size={60} className="mr-3 mt-1 text-accent" aria-hidden="true" />
                   <span className={`font-inter ${isWhiteFooter ? 'text-[#222]' : 'text-gray-300'}`}>
-                    No. 57/6, Opposite Nirashrithara Parihara Kendra, Sajjepalya, Magadi Main Road, Manahalli Road, Kottigepalya-560091, Bangalore
+                   57/6, Opp N.P.K, Sajjepalya, Magadi Road-560091, Bangalore
+
                   </span>
                 </div>
               </address>
