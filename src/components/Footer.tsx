@@ -97,7 +97,7 @@ const Footer = () => {
                   </a>
                 </div>
                 <div className="flex items-start break-words">
-                  <MapPin size={60} className="mr-3 mt-1 text-accent" aria-hidden="true" />
+                  <MapPin size={32} className="mr-3 mt-1 text-accent" aria-hidden="true" />
                   <span className={`font-inter ${isWhiteFooter ? 'text-[#222]' : 'text-gray-300'}`}>
                    57/6, Opp N.P.K, Sajjepalya, Magadi Road-560091, Bangalore
 
