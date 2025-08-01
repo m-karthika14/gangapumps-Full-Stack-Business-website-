@@ -8,7 +8,7 @@ import { useInView } from 'react-intersection-observer';
 const faqs = [
   {
     question: 'How long does delivery take?',
-    answer: 'Delivery typically takes 2-5 business days depending on your location.',
+    answer: 'In-stock items are usually delivered within 24 to 48 hours.',
   },
   {
     question: 'Do you offer installation services?',

@@ -80,21 +80,37 @@ const Footer = () => {
               <address className="space-y-3 not-italic text-sm">
                 <div className="flex items-center">
                   <Phone size={24} className="mr-3 text-accent" aria-hidden="true" />
-                  <a
-                    href="tel:+919986082495"
-                    className={`font-inter ${isWhiteFooter ? 'text-[#222]' : 'text-gray-300'}`}
-                  >
-                    +919986082495
-                  </a>
+                  <div className="flex flex-col">
+                    <a
+                      href="tel:+919986082495"
+                      className={`font-inter ${isWhiteFooter ? 'text-[#222]' : 'text-gray-300'}`}
+                    >
+                      +919986082495
+                    </a>
+                    <a
+                      href="tel:+919980682495"
+                      className={`font-inter ${isWhiteFooter ? 'text-[#222]' : 'text-gray-300'}`}
+                    >
+                      +919980682495
+                    </a>
+                  </div>
                 </div>
                 <div className="flex items-center">
                   <Mail size={24} className="mr-3 text-accent" aria-hidden="true" />
-                  <a
-                    href="mailto:sales@gangapumps.com"
-                    className={`font-inter ${isWhiteFooter ? 'text-[#222]' : 'text-gray-300'}`}
-                  >
-                    sales@gangapumps.com
-                  </a>
+                  <div className="flex flex-col">
+                    <a
+                      href="mailto:sales@gangapumps.com"
+                      className={`font-inter ${isWhiteFooter ? 'text-[#222]' : 'text-gray-300'}`}
+                    >
+                      sales@gangapumps.com
+                    </a>
+                    <a
+                      href="mailto:gangahitech@gmail.com"
+                      className={`font-inter ${isWhiteFooter ? 'text-[#222]' : 'text-gray-300'}`}
+                    >
+                      gangahitech@gmail.com
+                    </a>
+                  </div>
                 </div>
                 <div className="flex items-start break-words">
                   <MapPin size={32} className="mr-3 mt-1 text-accent" aria-hidden="true" />

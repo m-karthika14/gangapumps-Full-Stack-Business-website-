@@ -83,7 +83,7 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Email Address"
-                required
+                
                 className="w-full px-4 py-3 border border-gray-200 bg-white/90 rounded-md font-inter text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-primary"
               />
               <input
@@ -190,6 +190,8 @@ const Contact = () => {
                 <div>
                   <h4 className="font-semibold text-dark mb-1">Phone</h4>
                   <p>+91 9986082495</p>
+                    
+                 <p> +919980682495</p>
                   
                 </div>
               </div>
@@ -213,6 +215,7 @@ const Contact = () => {
                 <div>
                   <h4 className="font-semibold text-dark mb-1">Email</h4>
                   <p>sales@gangapumps.com</p>
+                  <p>gangahitech@gmail.com</p>
                   
                 </div>
               </div>
@@ -222,7 +225,7 @@ const Contact = () => {
                   <h4 className="font-semibold text-dark mb-1">Business Hours</h4>
                   <p>
                     Monday - Saturday: 9:00 AM - 8:00 PM<br />
-                    Sunday: 10:00 AM - 6:00 PM
+                    
                   </p>
                 </div>
               </div>

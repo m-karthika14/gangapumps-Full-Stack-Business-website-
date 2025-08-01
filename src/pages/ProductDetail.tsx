@@ -148,6 +148,7 @@ const ProductDetail = () => {
               <div>
                 <div className="font-inter font-semibold">Call us</div>
                 <div className="font-inter">+91 9986082495</div>
+                <div className="font-inter">+91 9980682495</div>
               </div>
             </div>
 
@@ -156,6 +157,7 @@ const ProductDetail = () => {
               <div>
                 <div className="font-inter font-semibold">Email us</div>
                 <div className="font-inter">sales@gangapumps.com</div>
+                <div className="font-inter">gangahitech@gmail.com</div>
               </div>
             </div>
           </div>
