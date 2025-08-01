@@ -172,7 +172,7 @@ const About = () => {
         We Proudly Serve All of <span className="text-accent">Bangalore</span>
       </h2>
       <p className="max-w-2xl text-white/90 text-lg">
-        From Indiranagar to Whitefield, from homes to factories — Ganga Electrical & Hardwares is your reliable partner across Bangalore. Whether it's a plumbing emergency, electrical issue, or a water pump installation, we deliver fast, friendly, and affordable service.
+        Ganga Electrical & Hardwares is your reliable partner across Bangalore. Whether it's a plumbing emergency, electrical issue, or a water pump installation, we deliver fast, friendly, and affordable service.
       </p>
     </div>
 
