@@ -26,6 +26,9 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://gangapumps.com/" />
 
+  <!-- Theme color for mobile browsers -->
+  <meta name="theme-color" content="#183B4E" />
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gangapumps.com/" />
@@ -54,6 +57,53 @@
         rel="stylesheet"
       />
     </noscript>
+
+    <!-- JSON-LD Structured Data: Organization + Website -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "name": "Ganga Electrical & Hardwares",
+            "url": "https://gangapumps.com/",
+            "logo": "https://gangapumps.com/new.avif",
+            "telephone": "+91-9986082495",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Kottigepalya",
+              "addressLocality": "Bangalore",
+              "addressRegion": "Karnataka",
+              "postalCode": "560091",
+              "addressCountry": "IN"
+            },
+            "sameAs": [
+              "https://www.facebook.com/yourbusiness",
+              "https://www.instagram.com/yourbusiness"
+            ],
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "telephone": "+91-9986082495",
+                "contactType": "customer service",
+                "areaServed": "IN",
+                "availableLanguage": ["English","Hindi","Kannada"]
+              }
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "url": "https://gangapumps.com/",
+            "name": "Ganga Electrical & Hardwares",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://gangapumps.com/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          }
+        ]
+      }
+    </script>
   </head>
 
   <body>

@@ -5,12 +5,12 @@ import { useData } from '../context/DataContext';
 import { Helmet } from 'react-helmet-async';
 
 const ProductDetail = () => {
-  const { id } = useParams();
+  const { slug } = useParams();
   const navigate = useNavigate();
   const { products, reviews } = useData();
 
-  const product = products.find(p => p._id === id);
-  const productReviews = reviews.filter(r => r.productId === id);
+  const product = products.find(p => p.slug === slug || p._id === slug);
+  const productReviews = product ? reviews.filter(r => r.productId === product._id) : [];
 
   if (!product) {
     return (
@@ -43,7 +43,7 @@ const ProductDetail = () => {
         <meta property="og:description" content={product.description || 'Trusted grundfos dealers in bangalore.'} />
         <meta property="og:image" content={product.image} />
         <meta property="og:type" content="product" />
-        <link rel="canonical" href={`https://gangapumps.com/product/${id}`} />
+  <link rel="canonical" href={`https://gangapumps.com/product/${slug || (product && product._id)}`} />
         <link
           rel="preload"
           as="image"

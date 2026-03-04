@@ -13,6 +13,7 @@ export interface Product {
   description: string;
   image: string;
   features: string[];
+  slug?: string;
 }
 
 export interface Review {
@@ -82,7 +83,23 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
         axios.get(`${BASE_URL}/leads`)
       ]);
 
-      setProducts(productRes.data);
+      // Create SEO-friendly slugs for products (client-side). Use only the slugified product name.
+      const slugify = (s: string) =>
+        s
+          .toString()
+          .toLowerCase()
+          .trim()
+          .replace(/[^a-z0-9\s-]/g, '')
+          .replace(/\s+/g, '-')
+          .replace(/-+/g, '-');
+
+      const rawProducts: Product[] = productRes.data;
+      const productsWithSlugs = rawProducts.map((p) => ({
+        ...p,
+        slug: p.name ? slugify(p.name) : p._id,
+      }));
+
+      setProducts(productsWithSlugs);
       setReviews(reviewRes.data);
       setLeads(leadRes.data);
 
@@ -104,12 +121,34 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
 
   const addProduct = async (product: Omit<Product, '_id'>) => {
     const res = await axios.post(`${BASE_URL}/products`, product);
-    setProducts(prev => [...prev, res.data]);
+    // Make slug for the newly added product (use only slugified name)
+    const slugify = (s: string) =>
+      s
+        .toString()
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-');
+
+    const created = res.data as Product;
+    const slug = created.name ? slugify(created.name) : created._id;
+    setProducts(prev => [...prev, { ...created, slug }]);
   };
 
   const updateProduct = async (id: string, product: Omit<Product, '_id'>) => {
     const res = await axios.put(`${BASE_URL}/products/${id}`, product);
-    setProducts(prev => prev.map(p => (p._id === id ? res.data : p)));
+    const updated = res.data as Product;
+    const slugify = (s: string) =>
+      s
+        .toString()
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-');
+    const slug = updated.name ? slugify(updated.name) : updated._id;
+    setProducts(prev => prev.map(p => (p._id === id ? { ...updated, slug } : p)));
   };
 
   const deleteProduct = async (id: string) => {

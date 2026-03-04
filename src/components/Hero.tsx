@@ -34,7 +34,7 @@ const Hero = () => {
       aria-label="Homepage banner section"
     >
       <Helmet>
-        <title>Ganga Electrical & Hardwares | Best pump Dealers in Bangalore</title>
+        <title>Pressure pumps in bangalore</title>
        
       </Helmet>
 
@@ -61,7 +61,7 @@ const Hero = () => {
                 src={slide.image}
                 srcSet={`${slide.image} 1280w`}
                 sizes="100vw"
-                alt="Ganga Electricals hardware showcase"
+                alt="Pressure Pumps in Bangalore"
                 title="Ganga Electricals & Hardware - Trusted Pump Services in Bangalore"
                 loading={index === 0 ? 'eager' : 'lazy'}
                 {...(index === 0 ? { fetchPriority: 'high' } : {})}
@@ -74,11 +74,10 @@ const Hero = () => {
             {isActive && (
               <div className="absolute bottom-12 left-4 right-4 z-20 sm:bottom-40 sm:left-8 sm:right-4 sm:max-w-xl">
                 <h2 className="font-playfair text-[#FFDC60] text-2xl font-bold leading-tight tracking-wide drop-shadow-[0_2px_4px_rgba(255,220,96,0.4)] sm:text-3xl md:text-4xl lg:text-5xl sm:leading-tight">
-                  Built on Trust <br />
-                  Driven by Experience
+                  Pressure Pumps in Bangalore
                 </h2>
                 <p className="font-inter text-sm leading-relaxed mt-4 text-[#D9E3F0] drop-shadow-sm tracking-normal sm:text-base sm:mt-3 md:text-lg">
-                  We are trusted Grundfos and CRI pump dealers in Bangalore, offering high-quality submersible pumps, pressure booster systems, and water motor pumps for both residential and commercial needs. 
+                  Ganga Electrical & Hardwares is a trusted supplier of pressure pumps in Bangalore. We provide Grundfos pressure pumps, booster pumps, submersible pumps and water pressure pumps for apartments, homes and commercial buildings.
                 </p>
                 <button
                   onClick={() => navigate('/contact')}

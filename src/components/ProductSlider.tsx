@@ -6,8 +6,8 @@ const ProductSlider: React.FC = () => {
   const navigate = useNavigate();
   const { products } = useData();
 
-  const handleProductClick = (productId: string) => {
-    navigate(`/product/${productId}`);
+  const handleProductClick = (productSlugOrId: string) => {
+    navigate(`/product/${productSlugOrId}`);
   };
 
   if (!products || products.length === 0) return null;
@@ -68,7 +68,7 @@ const ProductSlider: React.FC = () => {
               {/* View Button */}
               <div className="text-center mt-auto">
                 <button
-                  onClick={() => handleProductClick(product._id)}
+                  onClick={() => handleProductClick(product.slug || product._id)}
                   aria-label={`View details about ${product.name}`}
                   className="bg-accent text-white font-semibold w-full text-xs sm:text-base px-4 py-2 sm:px-6 sm:py-3 border border-black rounded-md shadow-md hover:scale-105 hover:shadow-[0_0_16px_rgba(221,168,83,0.8)] transition-all duration-300 ease-in-out animate-glow"
                 >

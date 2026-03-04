@@ -9,6 +9,7 @@ import WhyChooseUs from '../components/WhyChooseUs';
 import FaqSection from '../components/FaqSection';
 import ReviewsSection from '../components/ReviewsSection';
 import OurClients from '../components/OurClients';
+import PressureSection from '../components/PressureSection';
 
 const Home = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -17,19 +18,19 @@ const Home = () => {
     <div className="min-h-screen overflow-x-hidden">
       {/* SEO Tags */}
       <Helmet>
-        <title>Ganga Electrical & Hardwares | Best Grundfos Pump Dealers in Bangalore</title>
+        <title>Pressure Pumps in Bangalore | Booster Pumps | Grundfos Pressure Pump Dealer Bangalore</title>
         <meta
           name="description"
-          content="High-quality Grundfos, CRI, and Lubi water pumps, electricals, and plumbing materials in Bangalore. Ganga Electrical & Hardwares delivers trusted brands, expert service, and unmatched reliability."
+          content="Buy pressure pumps in Bangalore from trusted Grundfos pump dealers. We supply booster pumps, water pressure pumps, submersible pumps and borewell pumps for apartments, homes and commercial buildings."
         />
         <meta
     name="keywords"
-    content="Ganga Pumps,Grundfos pumps, Grundfos pump dealers, Ganga Electrical and Hardwares, grundfos water pumps Bangalore, submersible pumps, grundfos store Bangalore, best hardware store in Bengaluru, pressure pumps, plumbing materials, affordable grundfos dealers in bangalore"
+    content="pressure pumps in bangalore, pressure pumps near me, water pressure pump bangalore, booster pump bangalore, booster pump for apartment, grundfos pressure pumps, grundfos pump dealer bangalore, grundfos booster pump, submersible pumps bangalore, borewell pumps bangalore, water pump dealer bangalore, pump shop in bangalore, pressure pump for apartment, water pressure pump for home, best pressure pump bangalore"
   />
-        <meta property="og:title" content="Ganga Electrical & Hardwares | Home" />
+        <meta property="og:title" content="Pressure Pumps in Bangalore | Grundfos Pump Dealer" />
         <meta
          property="og:description"
-          content="Ganga Electrical & Hardwares delivers bestxcellence with e."
+          content="Buy pressure pumps, booster pumps and Grundfos water pumps in Bangalore. Trusted pump supplier for apartments and homes."
         /> 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://gangapumps.com/" />
@@ -51,7 +52,7 @@ const Home = () => {
   {...{ hreflang: 'en-IN' }}
 />
 
-        {/* JSON-LD Schema for Local Business */}
+        {/* JSON-LD Schema for Local Business (extended with services) */}
         <script type="application/ld+json">
           {`
           {
@@ -87,7 +88,19 @@ const Home = () => {
             "sameAs": [
               "https://www.instagram.com/yourbusiness",
               "https://www.facebook.com/yourbusiness"
-            ]
+            ],
+            "areaServed": "Bangalore",
+            "priceRange": "₹₹",
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Water Pumps",
+              "itemListElement": [
+                { "@type": "OfferCatalog", "name": "Pressure Pumps" },
+                { "@type": "OfferCatalog", "name": "Booster Pumps" },
+                { "@type": "OfferCatalog", "name": "Submersible Pumps" },
+                { "@type": "OfferCatalog", "name": "Borewell Pumps" }
+              ]
+            }
           }
           `}
         </script>
@@ -95,6 +108,7 @@ const Home = () => {
 
       {/* Hero Section */}
       <Hero />
+  <PressureSection />
 
       {/* Gradient Background for Statistics + Products */}
       <div

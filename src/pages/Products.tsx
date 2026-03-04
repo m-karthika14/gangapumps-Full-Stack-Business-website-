@@ -138,7 +138,7 @@ const Products: React.FC = () => {
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {items.map(product => (
-                <Link to={`/product/${product._id}`} key={product._id} className="block" aria-label={product.name}>
+                <Link to={`/product/${product.slug || product._id}`} key={product._id} className="block" aria-label={product.name}>
                   <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all cursor-pointer overflow-hidden">
                     <img
                       src={product.image || '/fallback-product.jpg'}

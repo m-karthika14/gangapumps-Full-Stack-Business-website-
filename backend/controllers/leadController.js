@@ -3,8 +3,21 @@
 const Lead = require('../models/Lead');
 const { Resend } = require('resend');
 
-// Initialize Resend client
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Initialize Resend client only if API key is provided. Otherwise provide a no-op stub.
+let resend;
+if (process.env.RESEND_API_KEY) {
+  resend = new Resend(process.env.RESEND_API_KEY);
+} else {
+  console.warn('⚠️  RESEND_API_KEY not set — emails will not be sent in this environment.');
+  resend = {
+    emails: {
+      send: async (opts) => {
+        console.log('🔕 Skipping email send (RESEND_API_KEY not set).', opts && opts.subject ? `Subject: ${opts.subject}` : '');
+        return Promise.resolve();
+      }
+    }
+  };
+}
 
 exports.addLead = async (req, res) => {
   try {
