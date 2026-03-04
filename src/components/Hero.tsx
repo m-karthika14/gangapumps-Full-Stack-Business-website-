@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
 const Hero = () => {
@@ -74,10 +74,10 @@ const Hero = () => {
             {isActive && (
               <div className="absolute bottom-12 left-4 right-4 z-20 sm:bottom-40 sm:left-8 sm:right-4 sm:max-w-xl">
                 <h2 className="font-playfair text-[#FFDC60] text-2xl font-bold leading-tight tracking-wide drop-shadow-[0_2px_4px_rgba(255,220,96,0.4)] sm:text-3xl md:text-4xl lg:text-5xl sm:leading-tight">
-                  Pressure Pumps in Bangalore
+                  <Link to="/pressure-pumps-bangalore" className="inline-block no-underline text-inherit focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-300">Pressure Pumps in Bangalore</Link>
                 </h2>
                 <p className="font-inter text-sm leading-relaxed mt-4 text-[#D9E3F0] drop-shadow-sm tracking-normal sm:text-base sm:mt-3 md:text-lg">
-                  Ganga Electrical & Hardwares is a trusted supplier of pressure pumps in Bangalore. We provide Grundfos pressure pumps, booster pumps, submersible pumps and water pressure pumps for apartments, homes and commercial buildings.
+                  Ganga Electrical & Hardwares is a trusted supplier of pressure pumps in Bangalore. We provide Grundfos pressure pumps, <Link to="/pressure-booster-pump-bangalore" className="no-underline text-inherit focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-300">booster pumps</Link>, submersible pumps and <Link to="/water-pressure-pump-bangalore" className="no-underline text-inherit focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-300">water pressure pumps</Link> for apartments, <Link to="/pressure-pump-for-home" className="no-underline text-inherit focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-300">homes</Link> and <Link to="/pressure-pump-for-apartment" className="no-underline text-inherit focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-300">commercial buildings</Link>.
                 </p>
                 <button
                   onClick={() => navigate('/contact')}

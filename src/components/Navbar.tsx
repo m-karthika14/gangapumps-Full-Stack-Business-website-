@@ -2,10 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
+// Expose a safe-typed accessAdmin on window for the temporary admin helper
+declare global {
+  interface Window {
+    accessAdmin?: (user: string, pass: string) => void;
+  }
+}
+
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+
+  const isBlogPage = location.pathname === '/blogs' || location.pathname.startsWith('/blogs/');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,7 +26,7 @@ const Navbar = () => {
 
   useEffect(() => {
     // Temporary Admin Login - consider moving to env or backend
-    (window as any).accessAdmin = (user: string, pass: string) => {
+    window.accessAdmin = (user: string, pass: string) => {
       if (user === 'naren' && pass === 'richkids1514') {
         console.log('%c✅ Access granted. Redirecting to admin...', 'color: green; font-weight: bold;');
         window.location.href = '/admin';
@@ -32,7 +41,8 @@ const Navbar = () => {
     { name: 'Products', path: '/products' },
     { name: 'Estimate', path: '/contact' },
     { name: 'Reviews', path: '/reviews' },
-    { name: 'AboutUs', path: '/about' }
+    { name: 'AboutUs', path: '/about' },
+    { name: 'Blog', path: '/blogs' }
   ];
 
   return (
@@ -72,9 +82,9 @@ const Navbar = () => {
                 <Link
                   to={path}
                   className={`font-inter text-lg font-semibold relative transition-all duration-200 ${
-                    location.pathname === path
-                      ? 'text-white'
-                      : 'text-white hover:text-white/80'
+                    isBlogPage
+                      ? (location.pathname === path ? 'text-dark' : 'text-dark hover:text-dark/80')
+                      : (location.pathname === path ? 'text-white' : 'text-white hover:text-white/80')
                   }`}
                 >
                   {name}
@@ -125,9 +135,9 @@ const Navbar = () => {
                       to={path}
                       onClick={() => setIsMobileMenuOpen(false)}
                       className={`block font-inter text-base font-semibold py-3 px-4 rounded-lg transition-all duration-200 ${
-                        location.pathname === path
-                          ? 'text-white bg-primary shadow-md'
-                          : 'text-dark hover:text-primary hover:bg-cream'
+                        isBlogPage
+                          ? (location.pathname === path ? 'text-dark bg-white/20 shadow-md' : 'text-dark hover:text-primary hover:bg-cream')
+                          : (location.pathname === path ? 'text-white bg-primary shadow-md' : 'text-dark hover:text-primary hover:bg-cream')
                       }`}
                     >
                       {name}
@@ -145,6 +155,7 @@ const Navbar = () => {
         <a href="/products">View our Products</a>
         <a href="/contact">Contact Ganga Electrical & Hardwares</a>
        <a href="/about" aria-label="Learn more about Ganga Pumps">About Ganga Electrical & Hardwares</a>
+        <a href="/blogs" aria-label="Read our blog">Blog</a>
         <a href="/reviews">Read Customer Reviews</a>
       </div>
     </nav>

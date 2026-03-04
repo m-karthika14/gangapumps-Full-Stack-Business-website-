@@ -1,11 +1,11 @@
 import React from 'react';
 import { Star } from 'lucide-react';
-import { useData } from '../context/DataContext';
+import { useData, Review } from '../context/DataContext';
 import { useInView } from 'react-intersection-observer';
 
 const cutoffDate = new Date('2025-07-24');
 
-const ReviewCard = ({ review }: { review: any }) => {
+const ReviewCard: React.FC<{ review: Review }> = ({ review }) => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   const name = review.name || 'Anonymous';

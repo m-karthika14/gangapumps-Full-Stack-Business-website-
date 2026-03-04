@@ -1,26 +1,76 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { useInView } from 'react-intersection-observer';
 
-const faqs = [
+const faqs: Array<{ question: string; answerText: string; answerJSX?: React.ReactNode }> = [
   {
     question: 'How long does delivery take?',
-    answer: 'In-stock items are usually delivered within 24 to 48 hours.',
+    answerText: 'In-stock items are usually delivered within 24 to 48 hours.',
   },
   {
     question: 'Do you offer installation services?',
-    answer: 'Yes, we offer expert installation services at an additional cost.',
+    answerText: 'Yes, we offer expert installation services at an additional cost.',
   },
   {
     question: 'Are your products under warranty?',
-    answer: 'Yes, all our products come with manufacturer warranty.',
+    answerText: 'Yes, all our products come with manufacturer warranty.',
   },
   {
     question: 'Do you support bulk orders?',
-    answer: 'Absolutely! We cater to both individual and business bulk orders.',
+    answerText: 'Absolutely! We cater to both individual and business bulk orders.',
+  },
+  // New FAQ linking to the Whitefield page (ranks for "pressure pumps whitefield")
+  {
+    question: 'Do you provide pressure pumps in Whitefield?',
+    answerText: 'Yes — we provide pressure pump supply and services in Whitefield. See our Whitefield page for details.',
+    answerJSX: (
+      <>
+        Yes — we provide pressure pump supply and services in Whitefield. See our{' '}
+        <Link to="/pressure-pumps-whitefield" className="underline text-accent">Whitefield page</Link>{' '}
+        for details.
+      </>
+    ),
+  },
+  // New FAQ answering where we serve in Bangalore and linking to the 5 neighborhood pages
+  {
+    question: 'Where do you serve in Bangalore?',
+    answerText: 'We serve across Bangalore including Whitefield, BTM, HSR Layout, Electronic City and Marathahalli. (ACTUALLY EACH AND EVERY CORNER IS SERVED)',
+    answerJSX: (
+      <div>
+        Our services are available across Bangalore, covering key areas such as{' '}
+        <Link to="/pressure-pumps-whitefield" className="underline text-accent">Whitefield</Link>,{' '}
+        <Link to="/pressure-pumps-btm" className="underline text-accent">BTM Layout</Link>,{' '}
+        <Link to="/pressure-pumps-hsr-layout" className="underline text-accent">HSR Layout</Link>,{' '}
+        <Link to="/pressure-pumps-electronic-city" className="underline text-accent">Electronic City</Link>,{' '}
+        <Link to="/pressure-pumps-marathahalli" className="underline text-accent">Marathahalli</Link>, and every major residential and commercial locality in the city.
+      </div>
+    ),
+  },
+  // New short, crisp FAQs from user keywords
+  {
+    question: 'What is the best pressure pump for home?',
+    answerText: 'For most homes a compact pressure booster or a SCALA (all-in-one) pump works well — choose by flow requirement and head. Contact us for a recommendation based on your plumbing.',
+  },
+  {
+    question: 'How to increase water pressure in an apartment?',
+    answerText: 'Common fixes: fit a booster pump, check and clean filters, and ensure header tank levels are adequate. We provide assessments and installation.',
+  },
+  {
+    question: 'Are you a Grundfos pump dealer in Bangalore?',
+    answerText: 'Yes — we are an authorised Grundfos dealer and supply SCALA and other Grundfos pressure solutions with installation and service.',
+    answerJSX: (
+      <>
+        Yes — we are an authorised Grundfos dealer. See our{' '}
+        <Link to="/grundfos-pump-dealer-bangalore" className="underline text-accent">Grundfos dealer page</Link>.
+      </>
+    ),
+  },
+  {
+    question: 'How can I solve water pressure problems?',
+    answerText: 'Diagnose leaks, check supply lines, then consider a correctly sized booster or pressure pump. We offer site surveys and quick fixes.',
   },
 ];
 
@@ -31,8 +81,59 @@ const colors = {
   accent: '#DDA853',
 };
 
+// Individual FAQ item as separate component so hooks can be used safely per item
+const FAQItem: React.FC<{
+  faq: { question: string; answerText: string; answerJSX?: React.ReactNode };
+  index: number;
+  openIndex: number | null;
+  toggleFAQ: (index: number) => void;
+  colors: typeof colors;
+}> = ({ faq, index, openIndex, toggleFAQ, colors }) => {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+
+  return (
+    <div
+      ref={ref}
+      className={`rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 ${
+        inView ? 'animate-fade-up' : 'opacity-0 translate-y-5'
+      }`}
+      style={{
+        background: 'linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02))',
+        border: '1px solid rgba(255, 255, 255, 0.15)',
+        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2), inset 0 0 0.5px rgba(255, 255, 255, 0.1)',
+        backdropFilter: 'blur(12px)',
+        WebkitBackdropFilter: 'blur(12px)',
+        color: colors.cream,
+      }}
+    >
+      <button
+        onClick={() => toggleFAQ(index)}
+        className="flex justify-between items-center w-full text-left p-4 font-inter text-sm sm:text-base font-medium bg-transparent transition-all duration-300"
+        aria-expanded={openIndex === index}
+        aria-controls={`faq-answer-${index}`}
+      >
+        {faq.question}
+        <span className="ml-3">
+          {openIndex === index ? (
+            <ChevronUp size={18} color={colors.cream} />
+          ) : (
+            <ChevronDown size={18} color={colors.cream} />
+          )}
+        </span>
+      </button>
+      <div
+        id={`faq-answer-${index}`}
+        className={`overflow-hidden px-4 text-sm sm:text-base font-inter transition-all duration-300 ease-in-out ${
+          openIndex === index ? 'max-h-40 py-2 opacity-100' : 'max-h-0 py-0 opacity-0'
+        }`}
+      >
+        {faq.answerJSX ? faq.answerJSX : faq.answerText}
+      </div>
+    </div>
+  );
+};
+
 const FaqSection: React.FC = () => {
-  const navigate = useNavigate();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
@@ -47,7 +148,7 @@ const FaqSection: React.FC = () => {
       name: faq.question,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: faq.answer,
+        text: faq.answerText,
       },
     })),
   };
@@ -56,12 +157,14 @@ const FaqSection: React.FC = () => {
     <>
       <Helmet>
         <title>Ganga Electricals & Hardwares</title>
-       
+
         <meta
           name="keywords"
           content="Ganga Pumps, Ganga Electrical and Hardwares, water pumps Bangalore, submersible pumps, electrical store Bangalore, best hardware store in Bengaluru, pressure pumps, plumbing materials, borewell motor sales"
         />
-     
+
+        {/* FAQ structured data for SEO */}
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
       <style>{`
@@ -99,51 +202,16 @@ const FaqSection: React.FC = () => {
           </div>
 
           <div className="mt-4 space-y-3 px-1">
-            {faqs.map((faq, index) => {
-              const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
-
-              return (
-                <div
-                  key={index}
-                  ref={ref}
-                  className={`rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 ${
-                    inView ? 'animate-fade-up' : 'opacity-0 translate-y-5'
-                  }`}
-                  style={{
-                    background: 'linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02))',
-                    border: '1px solid rgba(255, 255, 255, 0.15)',
-                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2), inset 0 0 0.5px rgba(255, 255, 255, 0.1)',
-                    backdropFilter: 'blur(12px)',
-                    WebkitBackdropFilter: 'blur(12px)',
-                    color: colors.cream,
-                  }}
-                >
-                  <button
-                    onClick={() => toggleFAQ(index)}
-                    className="flex justify-between items-center w-full text-left p-4 font-inter text-sm sm:text-base font-medium bg-transparent transition-all duration-300"
-                    aria-expanded={openIndex === index}
-                    aria-controls={`faq-answer-${index}`}
-                  >
-                    {faq.question}
-                    <span className="ml-3">
-                      {openIndex === index ? (
-                        <ChevronUp size={18} color={colors.cream} />
-                      ) : (
-                        <ChevronDown size={18} color={colors.cream} />
-                      )}
-                    </span>
-                  </button>
-                  <div
-                    id={`faq-answer-${index}`}
-                    className={`overflow-hidden px-4 text-sm sm:text-base font-inter transition-all duration-300 ease-in-out ${
-                      openIndex === index ? 'max-h-40 py-2 opacity-100' : 'max-h-0 py-0 opacity-0'
-                    }`}
-                  >
-                    {faq.answer}
-                  </div>
-                </div>
-              );
-            })}
+            {faqs.map((faq, index) => (
+              <FAQItem
+                key={index}
+                faq={faq}
+                index={index}
+                openIndex={openIndex}
+                toggleFAQ={toggleFAQ}
+                colors={colors}
+              />
+            ))}
           </div>
 
           <div className="mt-10 text-center px-2">

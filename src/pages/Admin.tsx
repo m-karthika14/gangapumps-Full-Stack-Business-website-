@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from '../context/useAuth';
-import { useData } from '../context/DataContext';
+import { useData, Product } from '../context/DataContext';
 import { Edit, Trash2, Star } from 'lucide-react';
 
 interface ProductFormType {
@@ -86,7 +86,7 @@ const Admin = () => {
     }
   };
 
-  const handleEditProduct = (product: any) => {
+  const handleEditProduct = (product: Product) => {
     setEditingProductId(product._id);
     setProductForm({
       name: product.name,
@@ -166,11 +166,11 @@ const Admin = () => {
 
         {/* TABS */}
         <div className="flex space-x-4 border-b mb-6">
-          {['products', 'reviews', 'leads'].map((tab) => (
+          {(['products', 'reviews', 'leads'] as const).map((tab) => (
             <button
               key={tab}
               onClick={() => {
-                setActiveTab(tab as any);
+                setActiveTab(tab);
                 resetForm();
               }}
               className={`pb-2 border-b-2 ${
@@ -191,12 +191,12 @@ const Admin = () => {
               </h2>
               <form onSubmit={handleProductSubmit} className="space-y-4">
                 <div className="grid md:grid-cols-2 gap-4">
-                  {['name', 'category', 'brand', 'useCase', 'shortDescription', 'image'].map((field) => (
+                  {(['name', 'category', 'brand', 'useCase', 'shortDescription', 'image'] as Array<keyof ProductFormType>).map((field) => (
                     <input
                       key={field}
                       type="text"
                       placeholder={field}
-                      value={(productForm as any)[field]}
+                      value={productForm[field] as string}
                       onChange={(e) =>
                         setProductForm({ ...productForm, [field]: e.target.value })
                       }
@@ -265,7 +265,7 @@ const Admin = () => {
             <div className="bg-white p-6 rounded shadow">
               <h2 className="text-xl font-semibold mb-4">Products ({products.length})</h2>
               <div className="space-y-4">
-                {products.map((product) => (
+                {products.map((product: Product) => (
                   <div
                     key={product._id}
                     className="flex justify-between items-center border p-4 rounded"

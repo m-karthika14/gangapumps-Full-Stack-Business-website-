@@ -47,10 +47,10 @@ const OurClients = () => {
               className="text-4xl sm:text-5xl font-bold font-playfair mb-4 tracking-tight"
               style={{ color: '#0e324c' }}
             >
-              Trusted Pump Suppliers in Bangalore
+              <Link to="/submersible-pumps-bangalore" className="no-underline text-inherit">Trusted Pump Suppliers in Bangalore</Link>
             </h2>
             <p className="text-lg text-dark mb-6 font-inter max-w-xl leading-relaxed">
-              Experience top-notch installation, repair, and maintenance services for all kinds of water pumps—trusted by hundreds of homes and industries in Bangalore.
+              Experience top-notch installation, repair, and maintenance services for all kinds of <Link to="/submersible-pump-for-borewell" className="no-underline text-inherit">water pumps</Link>—trusted by hundreds of <Link to="/borewell-submersible-pump" className="no-underline text-inherit">homes</Link> and industries in Bangalore.
             </p>
             <Link
   to="/about"
@@ -108,7 +108,7 @@ const OurClients = () => {
                 className="text-4xl sm:text-5xl font-bold font-playfair mb-4 tracking-tight"
                 style={{ color: '#0e324c' }}
               >
-                Our Authorised Dealers
+                <Link to="/submersible-pump-dealer-bangalore" className="no-underline text-inherit">Our Authorised Dealers</Link>
               </h2>
               <p className="text-base sm:text-lg text-dark font-inter leading-relaxed">
                 We collaborate with the top pump brands in the industry to ensure the highest quality products for our clients.
