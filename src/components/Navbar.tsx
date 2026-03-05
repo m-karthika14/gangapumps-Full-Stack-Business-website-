@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
@@ -14,7 +14,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
 
-  const isBlogPage = location.pathname === '/blogs' || location.pathname.startsWith('/blogs/');
+  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -81,11 +81,7 @@ const Navbar = () => {
               <li key={name}>
                 <Link
                   to={path}
-                  className={`font-inter text-lg font-semibold relative transition-all duration-200 ${
-                    isBlogPage
-                      ? (location.pathname === path ? 'text-dark' : 'text-dark hover:text-dark/80')
-                      : (location.pathname === path ? 'text-white' : 'text-white hover:text-white/80')
-                  }`}
+                  className={`font-inter text-lg font-semibold relative transition-all duration-200 text-black hover:text-black/80`}
                 >
                   {name}
                   <span
@@ -104,7 +100,7 @@ const Navbar = () => {
           <div className="md:hidden z-30">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-white hover:text-white/80 transition-all duration-300
+              className="text-black hover:text-black/80 transition-all duration-300
                          bg-white/10 backdrop-blur-sm p-2 rounded-lg border border-white/20
                          shadow-lg hover:bg-white/20 focus:outline-none"
               aria-label="Toggle menu"
@@ -135,9 +131,7 @@ const Navbar = () => {
                       to={path}
                       onClick={() => setIsMobileMenuOpen(false)}
                       className={`block font-inter text-base font-semibold py-3 px-4 rounded-lg transition-all duration-200 ${
-                        isBlogPage
-                          ? (location.pathname === path ? 'text-dark bg-white/20 shadow-md' : 'text-dark hover:text-primary hover:bg-cream')
-                          : (location.pathname === path ? 'text-white bg-primary shadow-md' : 'text-dark hover:text-primary hover:bg-cream')
+                        location.pathname === path ? 'text-black bg-white/20 shadow-md' : 'text-black hover:text-black/80'
                       }`}
                     >
                       {name}

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
@@ -125,8 +124,63 @@ const Footer = () => {
 
           {/* Footer Bottom */}
           <div className={`border-t mt-8 pt-8 text-center ${isWhiteFooter ? 'border-gray-300' : 'border-gray-700'}`}>
+            {/* Pump Solutions links - kept compact and responsive */}
+            <div className="max-w-3xl mx-auto mb-6">
+              <h3 className={`font-playfair text-lg font-semibold mb-3 ${isWhiteFooter ? 'text-[#222]' : 'text-gray-100'}`}>
+                Pump Solutions in Bangalore
+              </h3>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 list-none p-0 m-0">
+                <li>
+                  <a href="/pressure-pumps-bangalore" className={`font-inter block ${isWhiteFooter ? 'text-[#222] hover:text-primary' : 'text-gray-300 hover:text-accent'}`}>
+                    Pressure Pumps in Bangalore
+                  </a>
+                </li>
+                <li>
+                  <a href="/water-pressure-pump-bangalore" className={`font-inter block ${isWhiteFooter ? 'text-[#222] hover:text-primary' : 'text-gray-300 hover:text-accent'}`}>
+                    Water Pressure Pump Bangalore
+                  </a>
+                </li>
+                <li>
+                  <a href="/pressure-pump-for-apartment" className={`font-inter block ${isWhiteFooter ? 'text-[#222] hover:text-primary' : 'text-gray-300 hover:text-accent'}`}>
+                    Pressure Pump for Apartment
+                  </a>
+                </li>
+                <li>
+                  <a href="/pressure-pump-for-home" className={`font-inter block ${isWhiteFooter ? 'text-[#222] hover:text-primary' : 'text-gray-300 hover:text-accent'}`}>
+                    Pressure Pump for Home
+                  </a>
+                </li>
+                <li>
+                  <a href="/pressure-booster-pump-bangalore" className={`font-inter block ${isWhiteFooter ? 'text-[#222] hover:text-primary' : 'text-gray-300 hover:text-accent'}`}>
+                    Booster Pump Bangalore
+                  </a>
+                </li>
+                <li>
+                  <a href="/grundfos-pressure-pumps" className={`font-inter block ${isWhiteFooter ? 'text-[#222] hover:text-primary' : 'text-gray-300 hover:text-accent'}`}>
+                    Grundfos Pressure Pumps
+                  </a>
+                </li>
+                <li>
+                  <a href="/submersible-pumps-bangalore" className={`font-inter block ${isWhiteFooter ? 'text-[#222] hover:text-primary' : 'text-gray-300 hover:text-accent'}`}>
+                    Submersible Pumps Bangalore
+                  </a>
+                </li>
+               <li>
+                  <a href="/blogs" className={`font-inter block ${isWhiteFooter ? 'text-[#222] hover:text-primary' : 'text-gray-300 hover:text-accent'}`}>
+                    Pump Buying Guides
+                  </a>
+                </li>
+                <li>
+                  <a href="/submersible-pump-dealer-bangalore" className={`font-inter block ${isWhiteFooter ? 'text-[#222] hover:text-primary' : 'text-gray-300 hover:text-accent'}`}>
+                    Submersible Pump Dealer Bangalore
+                  </a>
+                </li>
+                
+              </ul>
+            </div>
+
             <p className={`font-inter ${isWhiteFooter ? 'text-[#222]' : 'text-gray-300'}`}>
-              © 2025 Ganga Electrical and Hardwares. All rights reserved.
+              © 2026 Ganga Electrical and Hardwares. All rights reserved.
             </p>
           </div>
         </div>
